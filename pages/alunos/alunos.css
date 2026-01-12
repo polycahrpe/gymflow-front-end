@@ -145,6 +145,78 @@
         }
     }
 
+    .form-add-aluno {
+        padding-top: 2rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .input-label {
+            width: min(360px, 100%);
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            label {
+                font-size: var(--normal-font-size);
+                font-weight: var(--font-semibold);
+                color: var(--text-color-light);
+                padding-left: .75rem;
+            }
+
+            input, select, textarea {
+                width: 100%;
+                padding: 1.2rem;
+                font-size: var(--small-font-size);
+                font-weight: var(--font-semibold);
+                border-radius: 1rem;
+                background-color: var(--body-color-light);
+                border: 3px solid transparent;
+                transition: .3s;
+
+                &:is(:focus, :hover) {
+                    border-color: var(--text-color);
+                }
+            }
+
+        }
+    }
+
+    .card-btns {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 2rem;
+
+        .btn-submit-aluno {
+            padding: 1rem 3rem;
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-bold);
+            color: #fff;
+            background-color: var(--text-color);
+            border-radius: 1.5rem;
+            transition: .3s;
+            align-self: flex-start;
+            cursor: pointer;
+            border: 3px solid var(--text-color);
+    
+        }
+    
+        .btn-cancelar-aluno {
+            padding: 1rem 3rem;
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-bold);
+            color: var(--text-color);
+            background-color: transparent;
+            border: 3px solid var(--text-color);
+            border-radius: 1.5rem;
+            transition: .3s;
+            align-self: flex-start;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
     
 
 }

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Aluno | GymFlow</title>
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href="../alunos.css">
+</head>
+<body>
+    <header>
+        <nav class="container nav-header">
+            <div class="logo-and-icon">
+                <a href="../home/index.html">GymFlow</a>
+                <i class="bi bi-list"></i>
+            </div>
+            <div class="news-profile">
+                <a href="../news/index.html">
+                    <i class="bi bi-bell"></i>
+                </a>
+               <div class="profile">
+                <div class="circle-profile">
+                    <a href="#">
+                        J
+                    </a>
+                </div>
+
+                <div class="name-level">
+                   <a href="../perfil/index.html" class="name">Josué</a>
+                   <small class="level">Admin</small>
+                </div>
+                
+               </div>
+            </div>
+        </nav>
+    </header>
+
+    <aside class="aside" id="aside">
+        <ul>
+            <li>
+                <a href="../home/index.html" class="link">
+                    <i class="bi bi-house icon-link"></i>
+                    <span class="text-link">Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="../alunos/index.html" class="link">
+                    <i class="bi bi-people   icon-link"></i>
+                    <span class="text-link">Alunos</span>
+                </a>
+            </li>
+            <li>
+                <a href="../planos/index.html" class="link">
+                    <i class="bi bi-calendar3 icon-link"></i>
+                    <span class="text-link">Planos</span>
+                </a>
+            </li>
+
+             <li>
+                <a href="../pagamentos/index.html" class="link">
+                    <i class="bi bi-credit-card-2-front icon-link"></i>
+                    <span class="text-link">Pagam...</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="../presenca/index.html" class="link">
+                    <i class="bi bi-calendar2-check icon-link"></i>
+                    <span class="text-link">Presenças</span>
+                </a>
+            </li>
+            <li>
+                <a href="../treinos/index.html" class="link">
+                    <i class="bi bi-trophy icon-link"></i>
+                    <span class="text-link">Treinos</span>
+                </a>
+            </li>
+            <li>
+                <a href="../coach/index.html" class="link">
+                    <i class="bi bi-person-plus icon-link"></i>
+                    <span class="text-link">Coach</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="link">
+                    <i class="bi bi-box-arrow-right icon-link"></i>
+                    <span class="text-link">Terminar Ses...</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="container main-alunos">
+
+
+        <section class="section-alunos">
+            
+            <div class="card-title-description anime-bottom">
+                <strong>Cadastrar Novo Aluno</strong>
+                <small>
+                    Preenche os campos para cadastrar um novo aluno na plataforma Gymflow.
+                </small>
+            </div>
+
+            <div class="card-search-and-btnadd anime-bottom">
+
+                <a class="link-add" href="../index.html">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Voltar</span>
+                </a>
+
+            </div>
+
+            <div class="form-add-aluno anime-bottom">
+
+                <div class="input-label">
+                    <label for="#">Nome completo</label>
+                    <input 
+                        type="text"
+                        placeholder="Ex: Jorge Lopes"
+                        required
+                    />
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Email</label>
+                    <input 
+                        type="email"
+                        placeholder="exemplo@gmail.com"
+                        required
+                    />
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Telefone</label>
+                    <input 
+                        type="text"
+                        placeholder="9XX XXX XXX"
+                        required
+                    />
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Cidade Atual</label>
+                    <input 
+                        type="text"
+                        placeholder="Luanda, Talatona"
+                        required
+                    />
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Nº BI (Opcional)</label>
+                    <input 
+                        type="text"
+                        placeholder="Nº de identificação"
+                        required
+                    />
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Plano</label>
+                    <select name="" id="">
+                        <option value="" selected>Selecione o plano</option>
+                        <option value="250000">25.000 kz</option>
+                        <option value="400000">40.000 kz</option>
+                        <option value="800000">80.000 kz</option>
+                    </select>
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Coach</label>
+                    <select name="" id="">
+                        <option value="" selected>Selecione o coach</option>
+                        <option value="Joao">João</option>
+                        <option value="Helena">Helena</option>
+                        <option value="Leandro">Leandro</option>
+                    </select>
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Data inícial</label>
+                    <input 
+                        type="date"
+                        required
+                    />
+                </div>
+
+                <div class="input-label">
+                    <label for="#">Senha</label>
+                    <input 
+                        type="password"
+                        placeholder="Crie uma senha inícial"
+                        required
+                    />
+                </div>
+
+            </div>
+
+            <div class="card-btns anime-bottom">
+                <button type="submit" class="btn-submit-aluno">Registrar</button>
+                <a href="../index.html" class="btn-cancelar-aluno">Cancelar</a>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>
