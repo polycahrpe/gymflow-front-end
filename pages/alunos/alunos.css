@@ -15,6 +15,136 @@
     flex-direction: column;
     gap: 1.5rem;
 
+
+    .cards-alunos {
+        padding: 2rem 0 4rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 2.3rem;
+        row-gap: 3rem;
+
+
+        .card-aluno {
+            width: min(360px, 100%) !important;
+            box-shadow: var(--box-shadow);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: .3s;
+            border: 3px solid transparent;
+
+            &:hover{
+                border-color: var(--text-color);
+                cursor: pointer;
+                transform: scale(1.03);
+            }
+
+            .info-aluno {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+
+                .circle-profile-aluno {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background-color: var(--text-color);
+                    overflow: hidden;
+                    display: grid;
+                    place-content: center;
+                    color: #fff;
+                    font-weight: var(--font-medium);
+                    font-size: var(--h2-font-size);
+                }
+
+                .name-and-plano {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .2rem;
+
+                    a {
+                        font-size: var(--h3-font-size);
+                        font-weight: var(--font-semibold);
+                        color: var(--text-color);
+                    }
+
+                    small {
+                        font-size: var(--small-font-size);
+                        color: var(--text-color-light);
+                    }
+                }
+
+                .estado {
+                    margin-left: auto;
+                    font-size: var(--smaller-font-size);
+                    padding: .2rem .7rem;
+                    border-radius: 50px;
+                    background-color: var(--text-color);
+                    color: #fff;
+                    font-weight: var(--font-medium);
+                    transform: translateY(-8px);
+                }
+
+
+            }
+
+            .list-contact {
+                display: flex;
+                flex-direction: column;
+                gap: .7rem;
+
+                li {
+                    padding: 0 .7rem;
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    span {
+                        font-size: var(--normal-font-size);
+                        font-weight: var(--font-semibold);
+                    }
+                }
+            }
+
+            .line {
+                border: 1px solid var(--body-color-light);
+                margin: .25rem 0;
+            }
+
+            .card-btns {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: .75rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .25rem;
+                    padding: 1rem 1.8rem;
+                    border-radius: 50px;
+                    background-color: var(--body-color-light);
+
+                    i {
+                        font-size: var(--small-font-size);
+                        color: var(--text-color);
+                    }
+
+                    span {
+                        font-size: var(--small-font-size);
+                        font-weight: var(--font-semibold);
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+    }
+
     
 
 }
