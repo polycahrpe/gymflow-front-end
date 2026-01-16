@@ -39,7 +39,7 @@
 
 
             &:hover {
-                border: 3px solid var(--text-color);
+                border: 3px solid var(--first-color);
                 transform: scale(1.03);
             }
 
@@ -49,9 +49,9 @@
             }
 
             p {
-                font-size: var(--h1-font-size);
+                font-size: var(--biggest-font-size);
                 font-weight: var(--font-bold);
-                color: var(--text-color-light);
+                color: var(--first-color);
             }
 
             > small {
@@ -72,6 +72,10 @@
                     display: flex;
                     align-items: center;
                     gap: .2rem;
+
+                    i {
+                        color: var(--first-color);
+                    }
 
                     small {
                         font-size: var(--small-font-size);
@@ -94,6 +98,10 @@
                     gap: .5rem;
                     font-size: var(--small-font-size);
                     color: var(--text-color-light);
+
+                    i {
+                        color: var(--first-color);
+                    }
                 }
             }
 
@@ -124,13 +132,18 @@
                     }
 
                     &:hover {
-                        background-color: var(--text-color);
                         color: #fff;
+                        background-color: #ea1d2c;
                     }
                 }
 
                 a.edit {
                     flex: 1 !important;
+                    
+                    &:hover {
+                        background-color: var(--first-color) !important;
+                    }
+
                 }
             }
 

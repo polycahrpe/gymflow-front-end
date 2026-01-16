@@ -1,0 +1,52 @@
+.main-pagamentos{
+    display: flex;
+    justify-content: space-between;
+    padding-top: calc(4rem + var(--header-height));
+    gap: 2rem;
+}
+
+.section-pagamentos  {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+
+    .cards-status-pagamentos {
+        margin: .75rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+
+        .card-ststus-pagamento {
+            width: min(265px, 100%);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            border-radius: 1.5rem;
+            border: 3px solid transparent;
+            transition: .3s;
+
+            &:hover {
+                border-color: var(--first-color);
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+
+            span {
+                font-size: var(--small-font-size);
+                color: var(--first-color);
+            }
+
+            strong {
+                font-size: var(--biggest-font-size);
+                font-weight: var(--font-bold);
+            }
+        }
+    }
+
+}

@@ -38,7 +38,7 @@
             border: 3px solid transparent;
 
             &:hover{
-                border-color: var(--text-color);
+                border-color: var(--first-color);
                 cursor: pointer;
                 transform: scale(1.03);
             }
@@ -83,7 +83,7 @@
                     font-size: var(--smaller-font-size);
                     padding: .2rem .7rem;
                     border-radius: 50px;
-                    background-color: var(--text-color);
+                    background-color: var(--first-color);
                     color: #fff;
                     font-weight: var(--font-medium);
                     transform: translateY(-8px);
@@ -103,6 +103,11 @@
                     align-items: center;
                     gap: .5rem;
 
+                    i {
+                        font-size: var(--small-font-size);
+                        color: var(--first-color);
+                    }
+
                     span {
                         font-size: var(--normal-font-size);
                         font-weight: var(--font-semibold);
@@ -112,7 +117,6 @@
 
             .line {
                 border: 1px solid var(--body-color-light);
-                margin: .25rem 0;
             }
 
             .card-btns {
@@ -122,11 +126,12 @@
                 gap: .75rem;
 
                 a {
+                    flex: 1;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: .25rem;
-                    padding: 1rem 1.8rem;
+                    padding: 1.2rem;
                     border-radius: 50px;
                     background-color: var(--body-color-light);
 
@@ -176,7 +181,7 @@
                 transition: .3s;
 
                 &:is(:focus, :hover) {
-                    border-color: var(--text-color);
+                    border-color: var(--first-color);
                 }
             }
 
@@ -190,27 +195,32 @@
         padding-top: 2rem;
 
         .btn-submit-aluno {
-            padding: 1rem 3rem;
+            padding: 1rem 4rem;
             font-size: var(--normal-font-size);
             font-weight: var(--font-bold);
             color: #fff;
             background-color: var(--text-color);
-            border-radius: 1.5rem;
+            border-radius: 50px;
             transition: .3s;
             align-self: flex-start;
             cursor: pointer;
             border: 3px solid var(--text-color);
+
+            &:hover {
+                background-color: var(--first-color);
+                border-color: var(--first-color);
+            }
     
         }
     
         .btn-cancelar-aluno {
-            padding: 1rem 3rem;
+            padding: 1rem 4rem;
             font-size: var(--normal-font-size);
             font-weight: var(--font-bold);
             color: var(--text-color);
             background-color: transparent;
             border: 3px solid var(--text-color);
-            border-radius: 1.5rem;
+            border-radius: 50px;
             transition: .3s;
             align-self: flex-start;
             cursor: pointer;

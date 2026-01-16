@@ -23,6 +23,8 @@ header{
 
             a{
                 color: #fff;
+                font-family: var(--logo-font) !important;
+                font-size: var(--h1-font-size);
             }
 
             i{
