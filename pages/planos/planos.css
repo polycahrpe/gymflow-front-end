@@ -189,7 +189,7 @@
                 transition: .3s;
 
                 &:is(:focus, :hover) {
-                    border-color: var(--text-color);
+                    border-color: var(--first-color);
                 }
             }
 
@@ -202,34 +202,42 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
+        padding-top: 2rem;
 
-        .btn-submit-plano {
-            padding: 1rem 3rem;
-            font-size: var(--normal-font-size);
+        button, a {
+            font-size: var(--small-font-size);
             font-weight: var(--font-bold);
-            color: #fff;
-            background-color: var(--text-color);
-            border-radius: 1.5rem;
+            border-radius: 50px;
             transition: .3s;
             align-self: flex-start;
             cursor: pointer;
+            padding: 1rem 2.5rem;
             border: 3px solid var(--text-color);
+        }
+
+        .btn-submit-plano {
+            color: #fff;
+            background-color: var(--text-color);
+
+            &:hover {
+                background-color: var(--first-color);
+                border-color: var(--first-color);
+            }
     
         }
     
         .btn-cancelar-plano {
-            padding: 1rem 3rem;
-            font-size: var(--normal-font-size);
-            font-weight: var(--font-bold);
             color: var(--text-color);
             background-color: transparent;
-            border: 3px solid var(--text-color);
-            border-radius: 1.5rem;
-            transition: .3s;
-            align-self: flex-start;
-            cursor: pointer;
-            text-decoration: none;
+
+            &:hover {
+                background-color: #ea1d2c;
+                border-color: #ea1d2c;
+                color: #fff;
+            }
         }
+    
+
     }
 
 }

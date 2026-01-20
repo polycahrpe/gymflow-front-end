@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Aluno | GymFlow</title>
+    <title>Novo Coach | GymFlow</title>
     <link rel="stylesheet" href="../../../assets/css/main.css">
-    <link rel="stylesheet" href="../alunos.css">
+    <link rel="stylesheet" href="../coach.css">
 </head>
 <body>
     <header>
@@ -90,15 +90,15 @@
         </ul>
     </aside>
 
-    <main class="container main-alunos">
+    <main class="container main-coach">
 
 
-        <section class="section-alunos">
+        <section class="section-coach">
             
             <div class="card-title-description anime-bottom">
-                <strong>Editar Aluno</strong>
+                <strong>Cadastrar Novo Coach</strong>
                 <small>
-                    Preenche os campos para Atualizar um aluno.
+                    Preencha os campos abaixo para adicionar um novo coach ao sistema.
                 </small>
             </div>
 
@@ -111,12 +111,12 @@
 
             </div>
 
-            <div class="form-aluno anime-bottom">
+            <div class="form-coach anime-bottom">
 
                 <div class="card-inputs">
 
                     <div class="input-label">
-                        <label for="#">Editar Nome completo</label>
+                        <label for="#">Nome completo</label>
                         <input 
                             type="text"
                             placeholder="Ex: Jorge Lopes"
@@ -125,44 +125,16 @@
                     </div>
     
                     <div class="input-label">
-                        <label for="#">Editar Email</label>
+                        <label for="#">Email</label>
                         <input 
                             type="email"
                             placeholder="exemplo@gmail.com"
                             required
                         />
                     </div>
-    
+        
                     <div class="input-label">
-                        <label for="#">Editar Plano</label>
-                        <select name="" id="">
-                            <option value="" selected>Selecione o plano</option>
-                            <option value="250000">25.000 kz</option>
-                            <option value="400000">40.000 kz</option>
-                            <option value="800000">80.000 kz</option>
-                        </select>
-                    </div>
-    
-                    <div class="input-label">
-                        <label for="#">Editar Coach</label>
-                        <select name="" id="">
-                            <option value="" selected>Selecione o coach</option>
-                            <option value="Joao">João</option>
-                            <option value="Helena">Helena</option>
-                            <option value="Leandro">Leandro</option>
-                        </select>
-                    </div>
-    
-                    <div class="input-label">
-                        <label for="#">Editar Data inícial</label>
-                        <input 
-                            type="date"
-                            required
-                        />
-                    </div>
-    
-                    <div class="input-label">
-                        <label for="#">Editar Senha</label>
+                        <label for="#">Senha</label>
                         <input 
                             type="password"
                             placeholder="Crie uma senha inícial"
@@ -174,11 +146,12 @@
 
 
                 <div class="card-btns anime-bottom">
-                    <button type="submit" class="btn-submit-aluno">Atualozar</button>
-                    <a href="../index.html" class="btn-cancelar-aluno">Cancelar</a>
+                    <button type="submit" class="btn-submit-coach">Registrar</button>
+                    <a href="../index.html" class="btn-cancelar-coach">Cancelar</a>
                 </div>
 
             </div>
+
 
         </section>
 

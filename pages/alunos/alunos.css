@@ -15,7 +15,6 @@
     flex-direction: column;
     gap: 1.5rem;
 
-
     .cards-alunos {
         padding: 2rem 0 4rem 0;
         display: flex;
@@ -30,10 +29,9 @@
             width: min(360px, 100%) !important;
             box-shadow: var(--box-shadow);
             border-radius: 1.5rem;
-            padding: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
             transition: .3s;
             border: 3px solid transparent;
 
@@ -47,6 +45,7 @@
                 display: flex;
                 align-items: center;
                 gap: .75rem;
+                padding: 2rem 2rem 0 2rem;
 
                 .circle-profile-aluno {
                     width: 48px;
@@ -96,6 +95,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: .7rem;
+                padding: 0 2rem !important;
 
                 li {
                     padding: 0 .7rem;
@@ -123,110 +123,133 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                gap: .75rem;
 
                 a {
                     flex: 1;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: .25rem;
-                    padding: 1.2rem;
-                    border-radius: 50px;
+                    gap: .5rem;
+                    padding: 1.3rem;
                     background-color: var(--body-color-light);
+                    transition: .2s;
+                    
+                    &:first-child {
+                        border-bottom-left-radius: 1.35rem;
 
-                    i {
-                        font-size: var(--small-font-size);
-                        color: var(--text-color);
+                        &:is(:hover, :focus) {
+                            background-color: var(--first-color);
+                        }
                     }
 
-                    span {
-                        font-size: var(--small-font-size);
-                        font-weight: var(--font-semibold);
+                    &:last-child {
+                        border-bottom-right-radius: 1.35rem;
+                        
+                        &:is(:hover, :focus) {
+                            background-color: #ea1d2c;
+                        }
+                    }
+
+                    &:hover {
+                        
+                        span, i {
+                            color: #fff;
+                        }
+                    }
+
+                    span, i {
                         color: var(--text-color);
                     }
                 }
+                
             }
         }
     }
 
-    .form-add-aluno {
+    .form-aluno {
         padding-top: 2rem;
-        width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 2rem;
 
-        .input-label {
-            width: min(360px, 100%);
+        .card-inputs {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            gap: .75rem;
+            flex-wrap: wrap;
+            gap: 2rem;
 
-            label {
-                font-size: var(--normal-font-size);
-                font-weight: var(--font-semibold);
-                color: var(--text-color-light);
-                padding-left: .75rem;
+            .input-label {
+                width: min(360px, 100%);
+                display: flex;
+                flex-direction: column;
+                gap: .75rem;
+    
+                label {
+                    font-size: var(--normal-font-size);
+                    font-weight: var(--font-semibold);
+                    color: var(--text-color-light);
+                    padding-left: .75rem;
+                }
+    
+                input, select, textarea {
+                    width: 100%;
+                    padding: 1.2rem;
+                    font-size: var(--small-font-size);
+                    font-weight: var(--font-semibold);
+                    border-radius: 1rem;
+                    background-color: var(--body-color-light);
+                    border: 3px solid transparent;
+                    transition: .3s;
+    
+                    &:is(:focus, :hover) {
+                        border-color: var(--first-color);
+                    }
+                }
+    
             }
+        }
 
-            input, select, textarea {
-                width: 100%;
-                padding: 1.2rem;
+        .card-btns {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 2rem;
+    
+            button, a {
                 font-size: var(--small-font-size);
-                font-weight: var(--font-semibold);
-                border-radius: 1rem;
-                background-color: var(--body-color-light);
-                border: 3px solid transparent;
+                font-weight: var(--font-bold);
+                border-radius: 50px;
                 transition: .3s;
-
-                &:is(:focus, :hover) {
+                align-self: flex-start;
+                cursor: pointer;
+                padding: 1rem 3rem;
+                border: 3px solid var(--text-color);
+            }
+    
+            .btn-submit-aluno {
+                color: #fff;
+                background-color: var(--text-color);
+    
+                &:hover {
+                    background-color: var(--first-color);
                     border-color: var(--first-color);
                 }
+        
             }
-
+        
+            .btn-cancelar-aluno {
+                color: var(--text-color);
+                background-color: transparent;
+    
+                &:hover {
+                    background-color: #ea1d2c;
+                    border-color: #ea1d2c;
+                    color: #fff;
+                }
+            }
+        
+    
         }
     }
-
-    .card-btns {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        padding-top: 2rem;
-
-        .btn-submit-aluno {
-            padding: 1rem 4rem;
-            font-size: var(--normal-font-size);
-            font-weight: var(--font-bold);
-            color: #fff;
-            background-color: var(--text-color);
-            border-radius: 50px;
-            transition: .3s;
-            align-self: flex-start;
-            cursor: pointer;
-            border: 3px solid var(--text-color);
-
-            &:hover {
-                background-color: var(--first-color);
-                border-color: var(--first-color);
-            }
-    
-        }
-    
-        .btn-cancelar-aluno {
-            padding: 1rem 4rem;
-            font-size: var(--normal-font-size);
-            font-weight: var(--font-bold);
-            color: var(--text-color);
-            background-color: transparent;
-            border: 3px solid var(--text-color);
-            border-radius: 50px;
-            transition: .3s;
-            align-self: flex-start;
-            cursor: pointer;
-            text-decoration: none;
-        }
-    }
-    
 
 }

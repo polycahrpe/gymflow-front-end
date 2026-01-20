@@ -1,0 +1,251 @@
+.main-coach{
+    display: flex;
+    justify-content: space-between;
+    padding-top: calc(4rem + var(--header-height));
+    gap: 2rem;
+}
+
+.section-coach {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .cards-coach {
+        padding: 2rem 0 4rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 2.3rem;
+        row-gap: 3rem;
+
+
+        .card-coach {
+            width: min(360px, 100%) !important;
+            box-shadow: var(--box-shadow);
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            transition: .3s;
+            border: 3px solid transparent;
+
+            &:hover{
+                border-color: var(--first-color);
+                cursor: pointer;
+                transform: scale(1.03);
+            }
+
+            .info-coach {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                padding: 2rem 2rem 0 2rem;
+
+                .circle-profile-coach {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background-color: var(--text-color);
+                    overflow: hidden;
+                    display: grid;
+                    place-content: center;
+                    color: #fff;
+                    font-weight: var(--font-medium);
+                    font-size: var(--h2-font-size);
+                }
+
+                .name-and-plano {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .2rem;
+
+                    a {
+                        font-size: var(--h3-font-size);
+                        font-weight: var(--font-semibold);
+                        color: var(--text-color);
+                    }
+
+                    small {
+                        font-size: var(--small-font-size);
+                        color: var(--text-color-light);
+                    }
+                }
+
+                .estado {
+                    margin-left: auto;
+                    font-size: var(--smaller-font-size);
+                    padding: .2rem .7rem;
+                    border-radius: 50px;
+                    background-color: var(--first-color);
+                    color: #fff;
+                    font-weight: var(--font-medium);
+                    transform: translateY(-8px);
+                }
+
+
+            }
+
+            .list-contact {
+                display: flex;
+                flex-direction: column;
+                gap: .7rem;
+                padding: 0 2rem !important;
+
+                li {
+                    padding: 0 .7rem;
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    i {
+                        font-size: var(--small-font-size);
+                        color: var(--first-color);
+                    }
+
+                    span {
+                        font-size: var(--normal-font-size);
+                        font-weight: var(--font-semibold);
+                    }
+                }
+            }
+
+            .line {
+                border: 1px solid var(--body-color-light);
+            }
+
+            .card-btns {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .5rem;
+                    padding: 1.3rem;
+                    background-color: var(--body-color-light);
+                    transition: .2s;
+                    
+                    &:first-child {
+                        border-bottom-left-radius: 1.35rem;
+
+                        &:is(:hover, :focus) {
+                            background-color: var(--first-color);
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom-right-radius: 1.35rem;
+                        
+                        &:is(:hover, :focus) {
+                            background-color: #ea1d2c;
+                        }
+                    }
+
+                    &:hover {
+                        
+                        span, i {
+                            color: #fff;
+                        }
+                    }
+
+                    span, i {
+                        color: var(--text-color);
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .form-coach {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .card-inputs {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+
+            .input-label {
+                width: min(360px, 100%);
+                display: flex;
+                flex-direction: column;
+                gap: .75rem;
+    
+                label {
+                    font-size: var(--normal-font-size);
+                    font-weight: var(--font-semibold);
+                    color: var(--text-color-light);
+                    padding-left: .75rem;
+                }
+    
+                input, select, textarea {
+                    width: 100%;
+                    padding: 1.2rem;
+                    font-size: var(--small-font-size);
+                    font-weight: var(--font-semibold);
+                    border-radius: 1rem;
+                    background-color: var(--body-color-light);
+                    border: 3px solid transparent;
+                    transition: .3s;
+    
+                    &:is(:focus, :hover) {
+                        border-color: var(--first-color);
+                    }
+                }
+    
+            }
+        }
+
+        .card-btns {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 2rem;
+    
+            button, a {
+                font-size: var(--small-font-size);
+                font-weight: var(--font-bold);
+                border-radius: 50px;
+                transition: .3s;
+                align-self: flex-start;
+                cursor: pointer;
+                padding: 1rem 3rem;
+                border: 3px solid var(--text-color);
+            }
+    
+            .btn-submit-coach {
+                color: #fff;
+                background-color: var(--text-color);
+    
+                &:hover {
+                    background-color: var(--first-color);
+                    border-color: var(--first-color);
+                }
+        
+            }
+        
+            .btn-cancelar-coach {
+                color: var(--text-color);
+                background-color: transparent;
+    
+                &:hover {
+                    background-color: #ea1d2c;
+                    border-color: #ea1d2c;
+                    color: #fff;
+                }
+            }
+        
+    
+        }
+    }
+
+}
