@@ -252,4 +252,128 @@
         }
     }
 
+    .ficha {
+        padding-top: 2rem;
+
+        .bcg {
+            height: 260px;
+            border-radius: 2rem;
+            background-color: var(--body-color-light);
+            transform: translateY(55px);
+            z-index: -1;
+        }
+
+        .card-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 5rem;
+
+            .circle-profile {
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                padding: 7px;
+                border: 4px solid var(--first-color);
+                z-index: 1;
+    
+    
+                > div {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background-color: var(--text-color);
+                    display: grid;
+                    place-content: center;
+                    transition: .3s;
+    
+                    &:hover {
+                        transform: scale(1.05);
+                        cursor: pointer;
+                    }
+    
+                    span {
+                        color: #fff;
+                        font-size: var(--biggest-font-size) !important;
+                        font-weight: var(--font-bold);
+                    }
+                }
+            }
+    
+            .name-email-more {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 50px;
+
+                .name-desc {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .25rem;
+    
+        
+                    strong {
+                        font-size: var(--h2-font-size);
+                    }
+
+                    small {
+                        color: var(--text-color-light);
+
+                        i {
+                            color: var(--first-color);
+                        }
+
+                        span {
+                            font-weight: var(--font-semibold);
+                        }
+                    }
+
+                }
+
+                .btns {
+                    display: flex;
+                    align-items: start;
+                    gap: 1rem;
+
+
+                    button, a {
+                        border: 3px solid var(--body-color-light);
+                        padding: .75rem;
+                        border-radius: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: .75rem;
+                        font-size: var(--small-font-size);
+                        font-weight: var(--font-semibold);
+                        color: var(--text-color);
+                        transition: .3s;
+
+                        span {
+                            font-size: var(--small-font-size);
+                            font-weight: var(--font-semibold);
+                            color: var(--text-color);
+                        }
+
+                        &.download {
+                            background-color: var(--text-color);
+                            color: #fff;
+                            padding: .75rem 1rem;
+
+                            span {
+                                color: #fff;
+                            }
+
+                            &:is(:hover, :focus) {
+                                transform: scale(1.05);
+                                box-shadow: var(--box-shadow);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        
+    }
+
 }

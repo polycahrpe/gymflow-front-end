@@ -22,9 +22,25 @@ header{
             gap: 3rem;
 
             a{
-                color: #fff;
-                font-family: var(--logo-font) !important;
-                font-size: var(--h1-font-size);
+                display: flex;
+                align-items: center;
+                gap: .8rem;
+
+                img {
+                    width: var(--biggest-font-size);
+                    height: auto;
+                }
+
+                p {
+                    font-size: var(--h3-font-size);
+                    font-weight: var(--font-bold);
+                    color: #fff;
+                    
+                    span {
+                        color: var(--first-color);
+                    }
+                }
+
             }
 
             i{
