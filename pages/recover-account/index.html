@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sessão | GymSoft</title>
+    <title>Recupera sua conta | GymSoft</title>
     <link rel="icon" href="../../assets/img/logo.png" type="image/png" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
-    <link rel="stylesheet" href="./signIn.css" />
+    <link rel="stylesheet" href="./recover-account.css" />
 </head>
 
 <body>
-    <main class="main-signIn">
+    <main class="main-recover-account">
 
         <section class="section-image">
-            <img src="../../assets/img/login.svg" class="anime-bottom" alt="">
+            <img src="../../assets/img/recover-account.svg" class="anime-bottom" alt="">
         </section>
 
         <section class="section-form">
@@ -22,37 +22,26 @@
                 <div class="title">
                     <img src="../../assets/img/logo.png" alt="">
                     <strong>
-                        Bem-vindo ao Gym<span>Flow</span>
+                        Recupere  sua conta Gym<span>Flow</span>
                     </strong>
                 </div>
 
                 <small class="description">
-                    Inicie sessão na sua conta para continuar usando o GymFlow! 
+                    Insira o email associado à sua conta para receber instruções de recuperação de senha.
                 </small>
 
                 <div class="input-label">
-                    <label>Email ou N º BI</label>
+                    <label>Email</label>
                     <input 
                         type="text"
-                        placeholder="Ex: exempl@gmail.com ou 1234567890"
+                        placeholder="Ex: exempl@gmail.com"
                         required
                     />
                 </div>
-
-                <div class="input-label">
-                    <label >Senha</label>
-                    <input 
-                        type="password"
-                        placeholder="exemplo@123#"
-                        required
-                    />
-                </div>
+                <a href="../signIn/index.html">Volte para o login! <span>Clique aqui!</span></a>
                 
-                <a href="../recover-account/index.html">Esqueceu a senha?</a>
+                <button class="button-dow" >Solicitar a Recuperação</button>
 
-                <button class="button-dow" >Iniciar Sessão</button>
-
-                <p>Não tem conta? Contacte o administrador do ginásio.</p>
                 <p>Volte para o site <a href="../index.html">Clique aqui</a></p>
             </form>
         </section>
