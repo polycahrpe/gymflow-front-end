@@ -1,0 +1,6 @@
+.main-presenca {
+    display: flex;
+    justify-content: space-between;
+    padding-top: calc(4rem + var(--header-height));
+    gap: 2rem;
+}
