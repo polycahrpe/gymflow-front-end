@@ -146,9 +146,9 @@
         justify-content: center;
         background:
             linear-gradient(
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.55)
-            ),
+                                rgba(0, 0, 0, 0.55),
+                                rgba(0, 0, 0, 0.55)
+                            ),
             transparent url('../img/banner-site.jpg') center center no-repeat;
         background-size: cover;
 
@@ -528,53 +528,9 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer {
     padding: 10rem 0;
+    border-top: 2px solid var(--body-color-light);
 
     .content {
         display: flex;

@@ -135,7 +135,58 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
+
+
+    .card-welcome {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+
+        strong { 
+            font-size: var(--biggest-font-size);
+        }
+
+        p {
+            color: var(--text-color-light);
+        }
+    }
+
+    .card-stactics {
+        width: 100%;
+        border-top: 2px solid var(--body-color-light);
+        border-bottom: 2px solid var(--body-color-light);
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: .75rem;
+
+
+        .card-stactc {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50px;
+                background-color: var(--body-color-light);
+                display: grid;
+                place-content: center;
+
+                i {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+
+        .line {
+            height: 100%;
+            border: 2px solid var(--body-color-light);
+        }
+    }
 
 
     
