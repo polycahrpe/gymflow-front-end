@@ -58,6 +58,10 @@
     transition: .5s all;
     opacity: 0;
     transform: translateY(28px);
+    width: 48px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .aside ul li:hover a .text-link {
     opacity: 1;

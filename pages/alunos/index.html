@@ -7,6 +7,12 @@
     <link rel="shortcut icon" href="../../assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="./alunos.css">
+
+    <script type="module" src="../../assets/js/aside.js" defer></script>
+    <script type="module" src="../../assets/js/header.js" defer></script>
+    <script type="module" src="./alunos.js" defer></script>
+
+
 </head>
 <body>
     <header>
@@ -26,14 +32,14 @@
                 </a>
                <div class="profile">
                 <div class="circle-profile">
-                    <a href="#">
-                        J
+                    <a href="#" id="circle-profile-header">
+                        ...
                     </a>
                 </div>
 
                 <div class="name-level">
-                   <a href="../perfil/index.html" class="name">Josué</a>
-                   <small class="level">Admin</small>
+                   <a href="../perfil/index.html" class="name" id="first-name">First Name</a>
+                   <small class="level" id="role">Admin</small>
                 </div>
                 
                </div>
@@ -43,56 +49,7 @@
 
     <aside class="aside" id="aside">
         <ul>
-            <li>
-                <a href="../home/index.html" class="link">
-                    <i class="bi bi-house icon-link"></i>
-                    <span class="text-link">Início</span>
-                </a>
-            </li>
-            <li>
-                <a href="../alunos/index.html" class="link">
-                    <i class="bi bi-people   icon-link"></i>
-                    <span class="text-link">Alunos</span>
-                </a>
-            </li>
-            <li>
-                <a href="../planos/index.html" class="link">
-                    <i class="bi bi-calendar3 icon-link"></i>
-                    <span class="text-link">Planos</span>
-                </a>
-            </li>
-
-             <li>
-                <a href="../pagamentos/index.html" class="link">
-                    <i class="bi bi-credit-card-2-front icon-link"></i>
-                    <span class="text-link">Pagam...</span>
-                </a>
-            </li>
             
-            <li>
-                <a href="../presenca/index.html" class="link">
-                    <i class="bi bi-calendar2-check icon-link"></i>
-                    <span class="text-link">Presenças</span>
-                </a>
-            </li>
-            <li>
-                <a href="../treinos/index.html" class="link">
-                    <i class="bi bi-trophy icon-link"></i>
-                    <span class="text-link">Treinos</span>
-                </a>
-            </li>
-            <li>
-                <a href="../coach/index.html" class="link">
-                    <i class="bi bi-person-plus icon-link"></i>
-                    <span class="text-link">Coach</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="link">
-                    <i class="bi bi-box-arrow-right icon-link"></i>
-                    <span class="text-link">Terminar Ses...</span>
-                </a>
-            </li>
         </ul>
     </aside>
 
@@ -123,7 +80,7 @@
                     
                 </div>
 
-                <a class="link-add" href="./novo/index.html">
+                <a class="link-add" href="./novo/index.html" id="btn-add-student">
                     <i class="bi bi-plus"></i>
                     <span>Novo Aluno</span>
                 </a>
@@ -137,7 +94,9 @@
 
                     <div class="info-aluno">
                         <div class="circle-profile-aluno">
-                            A
+                            <div>
+                                <span>AS</span>
+                            </div>
                         </div>
                         <div class="name-and-plano">
                             <a href="#">Alberto Silva</a>
@@ -150,15 +109,15 @@
                     <ul class="list-contact">
                         <li>
                             <i class="bi bi-envelope"></i>
-                            <span>albertosilva@gmail.com</span>
+                            <span>...</span>
                         </li>
                         <li>
                             <i class="bi bi-telephone"></i>
-                            <span>(+244) 945 321 246</span>
+                            <span>...</span>
                         </li>
                         <li>
                             <i class="bi bi-geo-alt"></i>
-                            <span>Camama</span> 
+                            <span>...</span> 
                         </li>
                     </ul>
 

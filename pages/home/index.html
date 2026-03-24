@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | GymFlow</title>
+
     <link rel="shortcut icon" href="../../assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="./home.css">
+
+    <script type="module" src="../../assets/js/aside.js" defer></script>
+    <script type="module" src="../../assets/js/header.js" defer></script>
+    <script type="module" src="./home.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -26,14 +32,14 @@
                 </a>
                <div class="profile">
                 <div class="circle-profile">
-                    <a href="#">
-                        J
+                    <a href="#" id="circle-profile-header">
+                        ...
                     </a>
                 </div>
 
                 <div class="name-level">
-                   <a href="../perfil/index.html" class="name">Josué</a>
-                   <small class="level">Admin</small>
+                   <a href="../perfil/index.html" class="name" id="first-name">First Name</a>
+                   <small class="level" id="role">Admin</small>
                 </div>
                 
                </div>
@@ -43,7 +49,7 @@
 
     <aside class="aside" id="aside">
         <ul>
-            <li>
+            <!-- <li>
                 <a href="../home/index.html" class="link">
                     <i class="bi bi-house icon-link"></i>
                     <span class="text-link">Início</span>
@@ -75,6 +81,7 @@
                     <span class="text-link">Presenças</span>
                 </a>
             </li>
+
             <li>
                 <a href="../treinos/index.html" class="link">
                     <i class="bi bi-trophy icon-link"></i>
@@ -86,135 +93,45 @@
                     <i class="bi bi-person-plus icon-link"></i>
                     <span class="text-link">Coach</span>
                 </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <a href="#" class="link">
                     <i class="bi bi-box-arrow-right icon-link"></i>
                     <span class="text-link">Terminar Ses...</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </aside>
 
     <main class="container main-home">
-
-        <!-- <section class="section-people">
-
-            <div class="card-title-description anime-bottom">
-                <strong>Meus alunos</strong>
-                <small>
-                    Veja aqui os alunos que você está acompanhando
-                </small>
-            </div>
-
-            <div class="card-list-people anime-bottom">
-
-                <div class="card-person">
-
-                    <div class="circle-profile">
-                        <div>
-                            <span>L</span>
-                        </div>
-                    </div>
-
-                    <div class="content-person">
-                        <div class="name-role">
-                            <a href="#" class="name-person">Leandro</a>
-                            <small class="role-person">
-                                <i class="bi bi-at"></i>
-                                <small>Aluno</small>
-                            </small>
-
-                        </div>
-                        <div class="btns">
-                            <a href="#" class="profile">
-                                Ver perfil
-                            </a>
-                            <a href="#" class="message">
-                                <i class="bi bi-whatsapp"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="card-person">
-
-                    <div class="circle-profile">
-                        <div>
-                            <span>L</span>
-                        </div>
-                    </div>
-
-                    <div class="content-person">
-                        <div class="name-role">
-                            <a href="#" class="name-person">Leandro</a>
-                            <small class="role-person">
-                                <i class="bi bi-at"></i>
-                                <small>Aluno</small>
-                            </small>
-
-                        </div>
-                        <div class="btns">
-                            <a href="#" class="profile">
-                                Ver perfil
-                            </a>
-                            <a href="#" class="message">
-                                <i class="bi bi-whatsapp"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="card-person">
-
-                    <div class="circle-profile">
-                        <div>
-                            <span>L</span>
-                        </div>
-                    </div>
-
-                    <div class="content-person">
-                        <div class="name-role">
-                            <a href="#" class="name-person">Leandro</a>
-                            <small class="role-person">
-                                <i class="bi bi-at"></i>
-                                <small>Aluno</small>
-                            </small>
-
-                        </div>
-                        <div class="btns">
-                            <a href="#" class="profile">
-                                Ver perfil
-                            </a>
-                            <a href="#" class="message">
-                                <i class="bi bi-whatsapp"></i>
-                        </div>
-                    </div>
-
-                </div>
-                
-            </div>
-
-        </section> -->
            
         <section class="section-blog">
 
             <div class="card-welcome anime-bottom">
-                <strong>Olá, Josué Lukombo !!!</strong>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <strong id="strong-wellcome-name">...</strong>
+                <small>
+                    <i class="bi bi-dot"></i>
+                    <span id="span-wellcome-role-state">...</span>
+                </small>
+                <p id="p-wellcome-painel-state">
+                    ...
                 </p>
             </div>
 
-            <div class="card-stactics anime-bottom">
+            <div class="card-stactics anime-bottom" id="card-stactcs-coach">
 
                 <div class="card-stactc anime-bottom">
                     <div class="icon">
-                        <i class="bi bi-person"></i>
+                        <i class="bi bi-people"></i>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum.</p>
-                        <strong>18</strong>
+                        <p>Meus Alunos </p>
+                        <strong>03</strong>
+
+                        <small>
+                            <i class="bi bi-caret-up-fill"></i>
+                            Ativos
+                        </small>
                     </div>
                 </div>
 
@@ -222,11 +139,16 @@
 
                 <div class="card-stactc anime-bottom">
                     <div class="icon">
-                        <i class="bi bi-person"></i>
+                        <i class="bi bi-book-half"></i>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum.</p>
-                        <strong>18</strong>
+                        <p>Fichas criadas</p>
+                        <strong>2</strong>
+
+                        <small>
+                            <i class="bi bi-caret-up-fill"></i>
+                            Por mim
+                        </small>
                     </div>
                 </div>
 
@@ -234,48 +156,132 @@
 
                 <div class="card-stactc anime-bottom">
                     <div class="icon">
-                        <i class="bi bi-person"></i>
+                        <i class="bi bi-bookmark-check"></i>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum.</p>
-                        <strong>18</strong>
+                        <p>Check-ins hoje</p>
+                        <strong>0</strong>
+
+                        <small>
+                            <i class="bi bi-caret-up-fill"></i>
+                            Dos meus alunos!
+                        </small>
                     </div>
                 </div>
 
             </div>
 
+            <div class="card-student anime-bottom" id="card-students-coach">
+
+                <div class="card-title-description anime-bottom">
+                    <strong>Meus Alunos</strong>
+                    <small>
+                        Aqui podes ver todos seus alunos
+                    </small>
+                </div>
+
+                <ul class="list-student-coach anime-bottoms">
+                    <li>
+
+                        <div class="card-img-name">
+
+                            <div class="img">
+                                <div>
+                                    <span>Al</span>
+                                </div>
+                            </div>
+
+                            <div class="name">Alvaro Lemo</div>
+
+                        </div>
+
+                        <div class="card-plan">
+                            <strong>Mensal</strong>
+                            <small>(Plano)</small>
+                        </div>
+
+                        <div class="card-state">
+                            <i class="bi bi-dot"></i>
+                            Ativo
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div class="card-img-name">
+
+                            <div class="img">
+                                <div>
+                                    <span>Al</span>
+                                </div>
+                            </div>
+
+                            <div class="name">Alvaro Lemo</div>
+
+                        </div>
+
+                        <div class="card-plan">
+                            <strong>Mensal</strong>
+                            <small>(Plano)</small>
+                        </div>
+
+                        <div class="card-state">
+                            <i class="bi bi-dot"></i>
+                            Ativo
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div class="card-img-name">
+
+                            <div class="img">
+                                <div>
+                                    <span>Al</span>
+                                </div>
+                            </div>
+
+                            <div class="name">Alvaro Lemo</div>
+
+                        </div>
+
+                        <div class="card-plan">
+                            <strong>Mensal</strong>
+                            <small>(Plano)</small>
+                        </div>
+
+                        <div class="card-state">
+                            <i class="bi bi-dot"></i>
+                            Ativo
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
             
 
         </section>
 
         <section class="section-profile">
 
-            <div class="card-change-bcg anime-bottom" >
+            <div class="card-change-bcg anime-bottom">
+
                 <div class="card-img-profile anime-bottom">
-                        <img src="../../assets/img/users/user6.jpg" alt="Imagem de perfil do GymSoft">
+                    <div>
+                        <span id="circle-card-profile">...</span>
+                    </div>
                 </div>
 
                 <div class="card-content-user-online anime-bottom">
                         <div class="name-level">
-                            <a href="#" class="name">Josué</a>
-                            <small class="level">@Caoch</small>
+                            <a href="#" class="name" id="name-card-profile">...</a>
+                            <small class="level" id="role-card-profile">...</small>
                         </div>
                 </div>
 
-                <ul>
-                     <li class="anime-bottom">
-                         <strong>15</strong>
-                         <small>Alunos</small>
-                     </li>
-                     <li class="anime-bottom">
-                         <strong>03</strong>
-                         <small>Blogs</small>
-                     </li>
-                     <li class="anime-bottom">
-                         <strong>25</strong>
-                         <small>Treinos</small>
-                     </li>
-                </ul>
             </div>
 
            <p class="description anime-bottom">
@@ -283,6 +289,7 @@
            </p>
 
         </section>
+
     </main>
 
 </body>
