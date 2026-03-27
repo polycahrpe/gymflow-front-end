@@ -1,4 +1,4 @@
-import { getSession } from "../../../assets/js/main.js";
+import { getSession } from "../../assets/js/main.js";
 
 
 function renderAdmin() {
@@ -8,11 +8,11 @@ function renderAdmin() {
 
 
 function error404() {
-    window.location.href = "../../404/index.html";
+    window.location.href = "../404/index.html";
 }
 
 
-function initNovoPlanos() {
+function initCoach() {
 
     const session = getSession();
     const { user } = session;
@@ -30,4 +30,4 @@ function initNovoPlanos() {
 
 }
 
-initNovoPlanos();
+initCoach();

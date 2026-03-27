@@ -12,7 +12,7 @@ function error404() {
 }
 
 
-function initNovoPlanos() {
+function initNovoAluno() {
 
     const session = getSession();
     const { user } = session;
@@ -30,4 +30,4 @@ function initNovoPlanos() {
 
 }
 
-initNovoPlanos();
+initNovoAluno();

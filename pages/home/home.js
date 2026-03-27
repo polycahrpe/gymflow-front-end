@@ -6,6 +6,43 @@ const spanWellcomeRoleState = document.querySelector("#span-wellcome-role-state"
 const pWellcomePainelState = document.querySelector("#p-wellcome-painel-state");
 
 
+function renderFrequencyWeek(frequencyWeek) {
+    const listDayweek = document.querySelector("#list-dias-semanal")
+
+    frequencyWeek.forEach(day => {
+        const li = document.createElement("li");
+        li.classList.add("anime-bottom");
+
+        li.innerHTML = `
+            <strong>${day.day}</strong>
+            <small>${day.presence}%</small>
+            <div class="bar" style="height: ${day.presence}%;"></div>
+        `
+
+        listDayweek.appendChild(li);
+    });
+
+}
+
+
+function renderAdmin(user) {
+
+    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
+    spanWellcomeRoleState.textContent = spanWellcomeRoleState ? `${user.role} Activo` : "Houve um erro ao Carregar os dados...";
+    pWellcomePainelState.textContent = pWellcomePainelState ? `Painel de ${user.role} ativado...` : "Houve um erro ao Carregar os dados...";
+
+    const cardStactcsAdmin = document.querySelector("#card-stactcs-admin")
+    const cardStudentsAdmin = document.querySelector("#card-students-admin")
+    const cardCoachsAdmin = document.querySelector("#card-coachs-admin")
+
+    cardStactcsAdmin.style.display = 'flex';
+    cardStudentsAdmin.style.display = 'flex';
+
+
+    renderFrequencyWeek(user.WeeklyFrequency);
+    
+
+}
 
 function renderCoach(user) {
 
@@ -22,6 +59,15 @@ function renderCoach(user) {
     
 
 }
+
+function renderStudent(user) {
+
+    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
+    spanWellcomeRoleState.textContent = spanWellcomeRoleState ? `${user.role} Activo` : "Houve um erro ao Carregar os dados...";
+    pWellcomePainelState.textContent = pWellcomePainelState ? `Painel de ${user.role} ativado...` : "Houve um erro ao Carregar os dados...";
+
+}
+
 
 function renderCardProfile(user) {
 
@@ -43,11 +89,28 @@ function initHome() {
     const { user } = session;
   
     
+
+    if (!user) {
+        window.location.href = "../index.html";
+        return;
+    }
+
+
     renderCardProfile(user)
 
 
-    if (user.role === "coach")
-        return renderCoach(user);
+    switch (user.role) {
+        case "admin":
+            renderAdmin(user);
+            break;
+        case "coach":
+            renderCoach(user);
+            break;
+        case "student":
+            break;
+        default:
+            break;
+    }
   
   
 }
