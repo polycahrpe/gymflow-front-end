@@ -173,6 +173,25 @@ img {
         }
 }
 
+.card-error {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+        width: 25%;
+    }
+
+    span {
+        text-align: center;
+        font-size: var(--h3-font-size);
+        font-weight: var(--font-medium);
+        color: var(--text-color-light);
+    }
+}
+
 
 .container {
     width: min(90%, 1150px) !important;

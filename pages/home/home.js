@@ -1,11 +1,10 @@
 import { getSession } from "../../assets/js/main.js";
 
-
 const strongWellcomeName = document.querySelector("#strong-wellcome-name");
 const spanWellcomeRoleState = document.querySelector("#span-wellcome-role-state");
 const pWellcomePainelState = document.querySelector("#p-wellcome-painel-state");
 
-
+//  function admin...
 function renderFrequencyWeek(frequencyWeek) {
     const listDayweek = document.querySelector("#list-dias-semanal")
 
@@ -23,7 +22,6 @@ function renderFrequencyWeek(frequencyWeek) {
     });
 
 }
-
 
 function renderAdmin(user) {
 
@@ -43,7 +41,10 @@ function renderAdmin(user) {
     
 
 }
+//  function admin end...
 
+
+//  function coach...
 function renderCoach(user) {
 
     strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
@@ -60,6 +61,10 @@ function renderCoach(user) {
 
 }
 
+//  function coach end...
+
+
+//  function student...
 function renderStudent(user) {
 
     strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
@@ -67,6 +72,9 @@ function renderStudent(user) {
     pWellcomePainelState.textContent = pWellcomePainelState ? `Painel de ${user.role} ativado...` : "Houve um erro ao Carregar os dados...";
 
 }
+
+//  function student end...
+
 
 
 function renderCardProfile(user) {
@@ -88,16 +96,12 @@ function initHome() {
     const session = getSession();
     const { user } = session;
   
-    
-
     if (!user) {
         window.location.href = "../index.html";
         return;
     }
 
-
     renderCardProfile(user)
-
 
     switch (user.role) {
         case "admin":
@@ -111,7 +115,6 @@ function initHome() {
         default:
             break;
     }
-  
   
 }
 
