@@ -1,17 +1,16 @@
-import { urlBase } from '../../main.js';
+import { urlBase } from '../main.js';
 
-
-export async function createPaymentPlan(dataPlan) {
+export async function loginFrom(dataUser) {
 
     const url = urlBase();
     
     try {
-        const response = await fetch(`${url}payment-plans/create`, {
+        const response = await fetch(`${url}login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(dataPlan)
+            body: JSON.stringify(dataUser)
         });
 
         if (!response.ok) {

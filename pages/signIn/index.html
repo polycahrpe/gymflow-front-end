@@ -6,7 +6,10 @@
     <title>Iniciar sessão | GymSoft</title>
     <link rel="icon" href="../../assets/img/logo.png" type="image/png" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
-    <link rel="stylesheet" href="./signIn.css" />
+    <link rel="stylesheet" href="./signIn.css"/>
+
+    <script type="module" src="./signin.js" defer></script>
+
 </head>
 
 <body>
@@ -31,11 +34,11 @@
                 </small>
 
                 <div class="input-label">
-                    <label>Email ou N º BI</label>
+                    <label>Telefone</label>
                     <input 
                         type="text"
-                        placeholder="Ex: exempl@gmail.com ou 1234567890"
-                        id="email-signIn"
+                        placeholder="Ex: 9xx xxx xxx"
+                        id="phone-signIn"
                         required
                     />
                 </div>
@@ -54,13 +57,12 @@
 
                 <button class="button-dow" id="button-signIn">Iniciar Sessão</button>
 
-                <p>Não tem conta? Contacte o administrador do ginásio.</p>
+                <p>Não tem conta? <a href="../choice-type-account/index.html">Crie uma aqui para se cadastrar</a>.</p>
                 <p>Volte para o site <a href="../index.html">Clique aqui</a></p>
             </form>
         </section>
     </main>
 
-    <script src="./signin.js"></script>
 </body>
 </html>
 

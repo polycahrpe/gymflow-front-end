@@ -7,6 +7,11 @@
     <link rel="icon" href="../../assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="./treinos.css">
+
+
+    <script type="module" src="../../assets/js/aside.js" defer></script>
+    <script type="module" src="../../assets/js/header.js" defer></script>
+
 </head>
 <body>
     
@@ -27,14 +32,14 @@
                 </a>
                <div class="profile">
                 <div class="circle-profile">
-                    <a href="#">
-                        J
+                    <a href="#" id="circle-profile-header">
+                        ...
                     </a>
                 </div>
 
                 <div class="name-level">
-                   <a href="../perfil/index.html" class="name">Josué</a>
-                   <small class="level">Admin</small>
+                   <a href="../perfil/index.html" class="name" id="first-name">First Name</a>
+                   <small class="level" id="role">Admin</small>
                 </div>
                 
                </div>
@@ -44,66 +49,49 @@
 
     <aside class="aside" id="aside">
         <ul>
-            <li>
-                <a href="../home/index.html" class="link">
-                    <i class="bi bi-house icon-link"></i>
-                    <span class="text-link">Início</span>
-                </a>
-            </li>
-            <li>
-                <a href="../alunos/index.html" class="link">
-                    <i class="bi bi-people   icon-link"></i>
-                    <span class="text-link">Alunos</span>
-                </a>
-            </li>
-            <li>
-                <a href="../planos/index.html" class="link">
-                    <i class="bi bi-calendar3 icon-link"></i>
-                    <span class="text-link">Planos</span>
-                </a>
-            </li>
-
-             <li>
-                <a href="../pagamentos/index.html" class="link">
-                    <i class="bi bi-credit-card-2-front icon-link"></i>
-                    <span class="text-link">Pagam...</span>
-                </a>
-            </li>
             
-            <li>
-                <a href="../presenca/index.html" class="link">
-                    <i class="bi bi-calendar2-check icon-link"></i>
-                    <span class="text-link">Presenças</span>
-                </a>
-            </li>
-            <li>
-                <a href="../treinos/index.html" class="link">
-                    <i class="bi bi-trophy icon-link"></i>
-                    <span class="text-link">Treinos</span>
-                </a>
-            </li>
-            <li>
-                <a href="../coach/index.html" class="link">
-                    <i class="bi bi-person-plus icon-link"></i>
-                    <span class="text-link">Coach</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="link">
-                    <i class="bi bi-box-arrow-right icon-link"></i>
-                    <span class="text-link">Terminar Ses...</span>
-                </a>
-            </li>
         </ul>
     </aside>
 
     <main class="container main-treinos">
 
         <div class="card-title-description anime-bottom">
-            <strong>Gestão de treinos</strong>
+            <strong>Gestão de fichas de treinos</strong>
             <small>
-                Gerencie os treinos dos seus alunos de forma eficiente e organizada.
+                Gerencie as fichas de treinos dos seus alunos, crie novas fichas, edite ou exclua fichas existentes. 
+                Mantenha o controle sobre os treinos personalizados para cada aluno e acompanhe seu progresso.
             </small>
+        </div>
+
+        <div class="card-search-and-btnadd anime-bottom">
+
+            <!-- <div class="card-search">
+
+                <input 
+                    placeholder="Busque aqui"
+                    type="text"
+                >
+
+                <button>
+                    <i class="bi bi-search"></i>
+                </button>
+                
+            </div> -->
+
+            <a class="link-add" href="./novo/index.html" id="btn-add-treino">
+                <i class="bi bi-plus"></i>
+                <span>Nova ficha de treino</span>
+            </a>
+
+        </div>
+
+        <div class="card-fichas-teinos anime-bottom">
+            <strong class="titulo">Hoje</strong>
+
+            <article class="card-ficha-de-treino">
+                
+            </article>
+            
         </div>
 
     </main>

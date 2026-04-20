@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar-se como Aluno | GymSoft</title>
+    <link rel="icon" href="../../assets/img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="stylesheet" href="./signup-student.css" />
+</head>
+
+<body>
+    <main class="main-signup-coach">
+
+        <section class="section-image">
+            <img src="../../assets/img/signup-student.svg" class="anime-bottom" alt="">
+        </section>
+
+        <section class="section-form">
+            <form class="anime-left">
+
+                <div class="title">
+                    <img src="../../assets/img/logo.png" alt="">
+                    <strong>
+                        Crie sua conta como Aluno para continuar usando o Gym<span>Flow</span>
+                    </strong>
+                </div>
+
+                <small class="description">
+                    Aproveite todos os benefícios que oferecemos para alcançar seus objetivos de fitness, depois de criar a conta o administrador deverá ativar sua conta para que possa acessar o sistema, caso tenha alguma dúvida entre em contato com o suporte.
+                </small>
+
+                <div class="card-select">
+
+                    <div class="input-label">
+                        <label>Nome completo</label>
+                        <input 
+                            type="text"
+                            placeholder="Ex: João da Silva"
+                            id="name-signIn"
+                            required
+                        />
+                    </div>
+    
+                    <div class="input-label">
+                        <label>Telefone</label>
+                        <input 
+                            type="text"
+                            placeholder="Ex: (+244) 9xxxxxxxx"
+                            id="phone-signIn"
+                            required
+                        />
+                    </div>
+
+                </div>
+
+
+                <div class="card-select">
+
+                    <div class="input-label">
+                        <label>Treinador</label>
+                        <select name="coach" id="coach-signIn" required>
+                            <option value="" selected>Selecione nome de um treinador</option>
+                            <option value="Leonahrdo Mbuxi">Leonahrdo Mbuxi</option>
+                            <option value="Maria Silva">Maria Silva</option>
+                            <option value="Carlos Pereira">Carlos Pereira</option>
+                            <option value="Ana Costa">Ana Costa</option>
+    
+                        </select>
+                    </div>
+    
+                    <div class="input-label">
+                        <label>Plano de pagamento</label>
+                        <select name="plan" id="plan-signIn" required>
+                            <option value="" selected>Selecione uma plano de pagamento</option>
+                            <option value="Plano Mensal">Plano Mensal (25.000 kz)</option>
+                            <option value="Plano Trimestral">Plano Trimestral (70.000 kz)</option>
+                            <option value="Plano Semestral">Plano Semestral (130.000 kz)</option>
+                            <option value="Plano Anual">Plano Anual (250.000 kz)</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="card-select">
+
+                    <div class="input-label">
+                        <label>Gênero</label>
+                        <select name="gender" id="gender-signIn" required>
+                            <option value="" selected>Selecione seu gênero</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-label">
+                        <label >Senha</label>
+                        <input 
+                            type="password"
+                            placeholder="exemplo@123#"
+                            id="password-signIn"
+                            required
+                        />
+                    </div>
+
+
+                </div>
+
+
+                
+
+                <button class="button-dow" id="button-signIn">
+                    Cadastrar-se
+                </button>
+
+                <p>Já tem uma conta? <a href="../signIn/index.html">Faça login aqui</a>.</p>
+                <p>Volte para o site <a href="../index.html">Clique aqui</a></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="./signin.js"></script>
+</body>
+</html>
+

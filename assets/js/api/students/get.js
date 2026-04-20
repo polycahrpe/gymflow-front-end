@@ -1,7 +1,12 @@
+import { urlBase } from '../../main.js';
+
 export async function getStudent() {
+
+    const url = urlBase();
+
     
     try {
-        const response = await fetch('http://127.0.0.1:8000/student/all', {
+        const response = await fetch(`${url}student/all`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -13,7 +18,6 @@ export async function getStudent() {
         }
 
         const data = await response.json();
-        console.log(data);
 
         return data; // opcional, caso queiras usar fora
     } catch (error) {

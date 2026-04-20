@@ -1,45 +1,73 @@
-import { getSession } from "../../../assets/js/main.js";
+import { createPaymentPlan } from "../../../assets/js/api/payment-plans/create.js";
+import { getSession, validateName } from "../../../assets/js/main.js";
 
 
-async function createPaymentPlan() {
+const namePlan = document.querySelector("#nome-plano")
+const price = document.querySelector("#preco")
+const durationPlan = document.querySelector("#duracao-plano")
+const descricaoPlan = document.querySelector("#descricao-plano")
+const btnSubmit = document.querySelector("#btn-submit-plano")
 
-    try {
-        const response = await fetch('http://127.0.0.1:8000/coach/', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            // body: JSON.stringify(data)
-        });
 
-        console.log(response);
-        
+let dataPlan = {
+    "name": "",
+    "price": 0,
+    "duration_months": "",
+    "description": ""
+}
 
-        // if (!response.ok) {
-        //     const errorData = await response.json().catch(() => null);
-        //     console.error('Erro na API:', errorData || response.statusText);
-        //     alert('Credenciais inválidas ou erro no servidor.');
-        //     return;
-        // }
+function validateForm() {
 
-        // const result = await response.json();
-        // console.log('Login OK:', result);
-
-        // aqui você pode guardar token e redirecionar:
-        // localStorage.setItem('token', result.access_token);
-        // window.location.href = '../dashboard/index.html';
-
-    } catch (error) {
-        // console.error('Erro:', error);
-        // alert('Erro ao iniciar sessão');
+    if (!namePlan.value.trim() || !price.value.trim() || !durationPlan.value.trim() || !descricaoPlan.value.trim()) {
+        alert("Por favor, preencha todos os campos.");
+        return false;
     }
+
+    if (!validateName(namePlan.value.trim())) {
+        alert("O nome do plano deve conter apenas letras e espaços (sem números ou caracteres especiais).");
+        return false;
+    }
+
+    const priceValue = parseFloat(price.value);
+    if (isNaN(priceValue) || priceValue <= 0) {
+        alert("O preço deve ser um número positivo");
+        return false;
+    }
+
+    if (durationPlan.value === "0") {
+        alert("Por favor, selecione uma duração válida.");
+        return false;
+    }
+
+    if (descricaoPlan.value.trim().length <= 10) {
+        alert("A descrição deve ter mais de 10 caracteres.");
+        return false;
+    }
+
+    return true;
 
 }
 
-
 function renderAdmin() {
+    
+   btnSubmit.addEventListener("click", async () => {
+        if (!validateForm()) 
+            return;
 
+        dataPlan.name = namePlan.value.trim();
+        dataPlan.price = parseFloat(price.value);
+        dataPlan.duration_months = durationPlan.value;
+        dataPlan.description = descricaoPlan.value.trim();
 
+        try {
+            const result = await createPaymentPlan(dataPlan);
+            console.log("Plano criado:", result);
+        } catch (error) {
+            alert("Erro ao criar o plano!");
+        }
+    });
+    
+    
 }
 
 

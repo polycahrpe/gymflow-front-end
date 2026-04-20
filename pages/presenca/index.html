@@ -7,6 +7,10 @@
     <link rel="icon" href="../../assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="./presenca.css">
+
+    <script type="module" src="../../assets/js/aside.js" defer></script>
+    <script type="module" src="../../assets/js/header.js" defer></script>
+
 </head>
 <body>
     
@@ -27,14 +31,14 @@
                 </a>
                <div class="profile">
                 <div class="circle-profile">
-                    <a href="#">
-                        J
+                    <a href="#" id="circle-profile-header">
+                        ...
                     </a>
                 </div>
 
                 <div class="name-level">
-                   <a href="../perfil/index.html" class="name">Josué</a>
-                   <small class="level">Admin</small>
+                   <a href="../perfil/index.html" class="name" id="first-name">First Name</a>
+                   <small class="level" id="role">Admin</small>
                 </div>
                 
                </div>
@@ -44,7 +48,7 @@
 
     <aside class="aside" id="aside">
         <ul>
-            <li>
+            <!-- <li>
                 <a href="../home/index.html" class="link">
                     <i class="bi bi-house icon-link"></i>
                     <span class="text-link">Início</span>
@@ -76,6 +80,7 @@
                     <span class="text-link">Presenças</span>
                 </a>
             </li>
+
             <li>
                 <a href="../treinos/index.html" class="link">
                     <i class="bi bi-trophy icon-link"></i>
@@ -87,13 +92,13 @@
                     <i class="bi bi-person-plus icon-link"></i>
                     <span class="text-link">Coach</span>
                 </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <a href="#" class="link">
                     <i class="bi bi-box-arrow-right icon-link"></i>
                     <span class="text-link">Terminar Ses...</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </aside>
 
@@ -105,6 +110,49 @@
                 Monitore e registre a presença dos alunos de forma eficiente.
             </small>
         </div>
+
+        <section class="section-precensa anime-bottom">
+            <span class="title">Check-ins hoje</span>
+
+            <article class="card">
+                <div class="circle">
+                    <span>LN</span>
+                </div>
+                <div class="name">
+                    <strong>Nome</strong>
+                    <span>Leo Nardo</span>
+                </div>
+
+                <div class="date">
+                    <strong>Data</strong>
+                    <span>2026-03-19</span>
+                </div>
+
+                <div class="init">
+                    <div>
+                        <strong>Entrada</strong>
+                        <span>05:00</span>
+                    </div>
+                    <button>
+                        <i class="bi bi-check-circle"></i>
+                        <small>Confirmar</small>
+                    </button>
+                </div>
+
+                 <div class="end">
+                    <div>
+                        <strong>Saída</strong>
+                        <span>17:00</span>
+                    </div>
+                    <button>
+                        <i class="bi bi-check-circle"></i>
+                        <small>Confirmar</small>
+                    </button>
+                </div>
+
+            </article>
+
+        </section>
 
     </main>
 

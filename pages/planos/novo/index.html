@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../planos.css">
 
     <script type="module" src="../../../assets/js/header.js" defer></script>
-    <script type="module" src="./novoPlano.js" defer></script>
+    <script type="module" src="./novoPlano.js"></script>
 
 </head>
 <body>
@@ -72,8 +72,8 @@
 
                     <div class="input-group">
                         <label for="duracao">Duração</label>
-                        <select name="duracao" id="">
-                            <option value="" disabled selected>Selecione a duração</option>
+                        <select name="duracao" id="duracao-plano">
+                            <option value="0" disabled selected>Selecione a duração</option>
                             <option value="1">1 Mês</option>
                             <option value="3">3 Meses</option>
                             <option value="6">6 Meses</option>
@@ -81,16 +81,65 @@
                         </select>
                     </div>
 
-                    <div class="input-group">
-                        <label for="descricao-plano">Benefícios (um por linha)</label>
-                        <textarea name="descricao-plano" id="descricao-plano" rows="4" placeholder="Ex: Acesso à todas as aulas Acompanhamento personalizado Nutrição inclusa"></textarea>
-                    </div>
 
-                    <!-- <button type="submit" class="btn-submit-plano">Criar Plano</button> -->
+                    <!-- <div class="input-group">
+                        <label for="descricao-plano">Benefícios (um por linha)</label>
+                        <textarea 
+                            name="descricao-plano" 
+                            id="descricao-plano" 
+                            rows="4" 
+                            placeholder="exercicio 01;\nexercicio 02;\nexercicio 03;"></textarea>
+                    </div> -->
+
+                    
             </div>
 
+            <div class="card-title-description anime-bottom">
+                <strong>Exercicos desse Plano</strong>
+                <small>
+                    Adicione os exercicios que os alunos terão acesso ao se inscreverem nesse plano.
+                </small>
+            </div>
+
+            <div class="form-add-plano anime-bottom">
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 01</label>
+                        <input type="text" id="exercicio-01" placeholder="Ex: Treino de Peito">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 02</label>
+                        <input type="text" id="exercicio-02" placeholder="Ex: Treino de Costas">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 03</label>
+                        <input type="text" id="exercicio-03" placeholder="Ex: Treino de Pernas">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 04</label>
+                        <input type="text" id="exercicio-04" placeholder="Ex: Treino de Braços">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 05</label>
+                        <input type="text" id="exercicio-05" placeholder="Ex: Treino de Ombros">
+                    </div>
+
+
+                    
+            </div>
+
+
             <div class="card-btns anime-bottom">
-                <button type="submit" class="btn-submit-plano">Criar Plano</button>
+                <button 
+                    class="btn-submit-plano"
+                    id="btn-submit-plano"
+                />
+                    Criar Plano
+                </button>
                 <a href="../index.html" class="btn-cancelar-plano">Cancelar</a>
             </div>
 

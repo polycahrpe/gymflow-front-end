@@ -71,29 +71,21 @@
             <div class="form-aluno anime-bottom">
 
                 <div class="card-inputs">
-
-                    <div class="input-label">
-                        <label for="#">Nome completo</label>
-                        <input 
-                            type="text"
-                            placeholder="Ex: Jorge Lopes"
-                            required
-                        />
-                    </div>
     
                     <div class="input-label">
                         <label for="#">Email</label>
                         <input 
                             type="email"
                             placeholder="exemplo@gmail.com"
+                            id="email-aluno"
                             required
                         />
                     </div>
     
                     <div class="input-label">
                         <label for="#">Plano</label>
-                        <select name="" id="">
-                            <option value="" selected>Selecione o plano</option>
+                        <select name="" id="plan-aluno">
+                            <option value="0" selected>Selecione o plano</option>
                             <option value="250000">25.000 kz</option>
                             <option value="400000">40.000 kz</option>
                             <option value="800000">80.000 kz</option>
@@ -102,36 +94,19 @@
     
                     <div class="input-label">
                         <label for="#">Coach</label>
-                        <select name="" id="">
-                            <option value="" selected>Selecione o coach</option>
-                            <option value="Joao">João</option>
-                            <option value="Helena">Helena</option>
-                            <option value="Leandro">Leandro</option>
+                        <select name="" id="coach-aluno">
+                            <option value="0" selected>Selecione o coach</option>
+                            <option value="1">João</option>
+                            <option value="2">Helena</option>
+                            <option value="3">Leandro</option>
                         </select>
                     </div>
     
-                    <div class="input-label">
-                        <label for="#">Data inícial</label>
-                        <input 
-                            type="date"
-                            required
-                        />
-                    </div>
-    
-                    <div class="input-label">
-                        <label for="#">Senha</label>
-                        <input 
-                            type="password"
-                            placeholder="Crie uma senha inícial"
-                            required
-                        />
-                    </div>
-
                 </div>
 
 
                 <div class="card-btns anime-bottom">
-                    <button type="submit" class="btn-submit-aluno">Registrar</button>
+                    <button type="submit" class="btn-submit-aluno" id="btn-submit-aluno">Registrar</button>
                     <a href="../index.html" class="btn-cancelar-aluno">Cancelar</a>
                 </div>
 

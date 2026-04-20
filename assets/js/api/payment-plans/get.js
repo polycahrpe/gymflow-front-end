@@ -1,7 +1,12 @@
+import { urlBase } from '../../main.js';
+
+
 export async function getPaymentPlan() {
+
+    const url = urlBase();
     
     try {
-        const response = await fetch('http://127.0.0.1:8000/payment-plans/all', {
+        const response = await fetch(`${url}payment-plans/all`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

@@ -16,11 +16,17 @@ async function renderAdmin() {
     const response = await getPaymentPlan();
 
     if (!response) {
-        showErrorCard("Erro ao carregar os planos de pagamento.")
+        showErrorCard("Erro na resposta do servidor, tente novamente mais tarde.");
         return;
     }
 
     const { plans } = response;
+
+    console.log(plans);
+    if (!plans || plans.length === 0) {
+        showErrorCard("Nenhum plano de pagamento encontrado.");
+        return;
+    }
 
     const listPlanos = document.querySelector('#list-planos');
 

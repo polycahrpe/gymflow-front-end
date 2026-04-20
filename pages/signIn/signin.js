@@ -1,63 +1,36 @@
+import { loginFrom } from "../../assets/js/api/login.js"
+
 const buttonSignIn = document.querySelector('#button-signIn');
-const emailSignIn = document.querySelector('#email-signIn');
+const phoneSignIn = document.querySelector('#phone-signIn');
 const passwordSignIn = document.querySelector('#password-signIn');
 
 let dataUser = {
-    email: '',
-    password: '',
+    number: '',
+    password: ''
 };
 
-function validateFields() {
+function validateForm() {
 
-    if (emailSignIn.value.trim() === '' || passwordSignIn.value.trim() === '') 
+    if (phoneSignIn.value.trim() === '' || passwordSignIn.value.trim() === '') 
         return alert('Por favor, preencha todos os campos');
     
     return true;
 
 }
 
-buttonSignIn.addEventListener('click', (e) => {
+buttonSignIn.addEventListener('click', async (e) => {
     e.preventDefault();
     
-    if (!validateFields()) return;
+    if (!validateForm()) return;
 
-    dataUser.email = emailSignIn.value.trim();
-    dataUser.password = passwordSignIn.value.trim();
+    dataUser.number = phoneSignIn.value.trim();
+    dataUser.password = passwordSignIn.value.trim();    
 
-    signIn(dataUser);
+    try {
+        const result = await loginFrom(dataUser);
+        console.log("Sucesso:", result);
+    } catch (error) {
+        alert("Erro ao fazer login!");
+    }
 
 });
-
-
-async function signIn(data) {
-    try {
-        const response = await fetch('http://127.0.0.1:8000/coach/', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            // body: JSON.stringify(data)
-        });
-
-        console.log(response);
-        
-
-        // if (!response.ok) {
-        //     const errorData = await response.json().catch(() => null);
-        //     console.error('Erro na API:', errorData || response.statusText);
-        //     alert('Credenciais inválidas ou erro no servidor.');
-        //     return;
-        // }
-
-        // const result = await response.json();
-        // console.log('Login OK:', result);
-
-        // aqui você pode guardar token e redirecionar:
-        // localStorage.setItem('token', result.access_token);
-        // window.location.href = '../dashboard/index.html';
-
-    } catch (error) {
-        // console.error('Erro:', error);
-        // alert('Erro ao iniciar sessão');
-    }
-}

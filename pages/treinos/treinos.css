@@ -1,6 +1,27 @@
 .main-treinos {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding-top: calc(4rem + var(--header-height));
+    padding: calc(4rem + var(--header-height)) 0;
     gap: 2rem;
+}
+
+.card-fichas-teinos {
+    border-top: 2px solid var(--body-color-light);
+    margin-top: 1.5rem;
+    padding: 3rem;
+    position: relative;
+
+    > strong.titulo {
+        background-color: var(--body-color);
+        padding: .75rem 1rem ;
+        transform: translateY(-68px);
+        position: absolute;
+    }
+
+    .card-ficha-de-treino {
+        background-color: var(--body-color-light);
+        padding: 1rem;
+        border-radius: .5rem;
+    }
 }
