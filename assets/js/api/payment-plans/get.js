@@ -18,7 +18,6 @@ export async function getPaymentPlan() {
         }
 
         const data = await response.json();
-        console.log(data);
 
         return data; // opcional, caso queiras usar fora
     } catch (error) {

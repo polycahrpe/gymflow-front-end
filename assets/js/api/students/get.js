@@ -1,15 +1,16 @@
 import { urlBase } from '../../main.js';
 
-export async function getStudent() {
+export async function getStudent(token) {
 
     const url = urlBase();
 
     
     try {
-        const response = await fetch(`${url}student/all`, {
+        const response = await fetch(`${url}students/all`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`  
             }
         });
 
@@ -19,7 +20,7 @@ export async function getStudent() {
 
         const data = await response.json();
 
-        return data; // opcional, caso queiras usar fora
+        return data;
     } catch (error) {
         console.error('Erro:', error);
     }

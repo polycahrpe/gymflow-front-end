@@ -5,7 +5,7 @@ export async function loginFrom(dataUser) {
     const url = urlBase();
     
     try {
-        const response = await fetch(`${url}login`, {
+        const response = await fetch(`${url}auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

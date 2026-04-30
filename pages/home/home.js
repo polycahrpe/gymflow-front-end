@@ -1,4 +1,5 @@
 import { getSession } from "../../assets/js/main.js";
+import { admin } from "./admin.js";
 
 const strongWellcomeName = document.querySelector("#strong-wellcome-name");
 const spanWellcomeRoleState = document.querySelector("#span-wellcome-role-state");
@@ -23,9 +24,11 @@ function renderFrequencyWeek(frequencyWeek) {
 
 }
 
-function renderAdmin(user) {
+function renderAdmin(session) {
 
-    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
+    const { user } = session;
+
+    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.nome}!!!` : "Houve um erro ao Carregar os dados...";
     spanWellcomeRoleState.textContent = spanWellcomeRoleState ? `${user.role} Activo` : "Houve um erro ao Carregar os dados...";
     pWellcomePainelState.textContent = pWellcomePainelState ? `Painel de ${user.role} ativado...` : "Houve um erro ao Carregar os dados...";
 
@@ -36,10 +39,8 @@ function renderAdmin(user) {
     cardStactcsAdmin.style.display = 'flex';
     cardStudentsAdmin.style.display = 'flex';
 
-
-    renderFrequencyWeek(user.WeeklyFrequency);
+    admin(session);
     
-
 }
 //  function admin end...
 
@@ -47,7 +48,7 @@ function renderAdmin(user) {
 //  function coach...
 function renderCoach(user) {
 
-    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
+    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.nome}!!!` : "Houve um erro ao Carregar os dados...";
     spanWellcomeRoleState.textContent = spanWellcomeRoleState ? `${user.role} Activo` : "Houve um erro ao Carregar os dados...";
     pWellcomePainelState.textContent = pWellcomePainelState ? `Painel de ${user.role} ativado...` : "Houve um erro ao Carregar os dados...";
 
@@ -67,7 +68,7 @@ function renderCoach(user) {
 //  function student...
 function renderStudent(user) {
 
-    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.name}!!!` : "Houve um erro ao Carregar os dados...";
+    strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.nome}!!!` : "Houve um erro ao Carregar os dados...";
     spanWellcomeRoleState.textContent = spanWellcomeRoleState ? `${user.role} Activo` : "Houve um erro ao Carregar os dados...";
     pWellcomePainelState.textContent = pWellcomePainelState ? `Painel de ${user.role} ativado...` : "Houve um erro ao Carregar os dados...";
 
@@ -84,8 +85,8 @@ function renderCardProfile(user) {
     const circleCardProfile = document.querySelector("#circle-card-profile");
 
 
-    circleCardProfile.textContent = circleCardProfile ? `${user.name.split(" ")[0].charAt(0)}${user.name.split(" ")[1].charAt(0)}` : "Error name";
-    nameCardProfile.textContent = nameCardProfile ? user.name : "Error name";
+    circleCardProfile.textContent = circleCardProfile ? `${user.nome.split(" ")[0].charAt(0)}${user.nome.split(" ")[1].charAt(0)}` : "Error name";
+    nameCardProfile.textContent = nameCardProfile ? user.nome : "Error name";
     roleCarProfile.textContent = roleCarProfile ? `@${user.role}` : "Error role";
 
 }
@@ -95,7 +96,7 @@ function initHome() {
 
     const session = getSession();
     const { user } = session;
-  
+
     if (!user) {
         window.location.href = "../index.html";
         return;
@@ -105,7 +106,7 @@ function initHome() {
 
     switch (user.role) {
         case "admin":
-            renderAdmin(user);
+            renderAdmin(session);
             break;
         case "coach":
             renderCoach(user);

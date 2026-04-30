@@ -1,11 +1,12 @@
-import { urlBase } from "../../main.js";
+import { urlBase } from "../main.js";
 
-export async function create(dataUser) {
+
+export async function signupCoach(dataUser) {
 
     const url = urlBase();
     
     try {
-        const response = await fetch(`${url}students/signup`, {
+        const response = await fetch(`${url}coaches/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

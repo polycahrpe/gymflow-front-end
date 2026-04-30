@@ -63,47 +63,71 @@
 
                     <div class="input-group">
                         <label for="nome-plano">Nome do Plano</label>
-                        <input type="text" id="nome-plano" placeholder="Ex: Plano Mensal">
+                        <input type="text" id="input-nome" placeholder="Ex: Plano Mensal">
                     </div>
                     
 
                     <div class="input-group">
                         <label for="preco">Preço (Kz)</label>
-                        <input type="number" id="preco" placeholder="25000">
+                        <input type="number" id="input-preco" placeholder="25000">
                     </div>
 
                     <div class="input-group">
                         <label for="duracao">Duração</label>
-                        <select name="duracao" id="">
-                            <option value="" disabled selected>Selecione a duração</option>
-                            <option value="1">1 Mês</option>
-                            <option value="3">3 Meses</option>
-                            <option value="6">6 Meses</option>
-                            <option value="12">12 Meses</option>
+                        <select name="duracao" id="duracao-plano">
+                            <option value="0" disabled selected>Selecione a duração</option>
+                            <option value="01">01 Dia</option>
+                            <option value="07">07 Dias</option>
+                            <option value="14">14 Dias</option>
+                            <option value="21">21 Dias</option>
+                            <option value="30">30 Dias</option>
+                            <option value="90">90 Dias</option>
+                            <option value="180">180 Dias</option>
+                            <option value="365">365 Dias</option>
                         </select>
                     </div>
 
-                    <div class="input-group">
-                        <label for="limite-de-acessos">Limite de Acessos</label>
-                        <select name="limite-de-acessos" id="">
-                            <option value="" disabled selected>Selecione o limite de acessos</option>
-                            <option value="ilimitado">Ilimitado</option>
-                            <option value="30">30 Acessos</option>
-                            <option value="60">60 Acessos</option>
-                            <option value="90">90 Acessos</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="descricao-plano">Benefícios (um por linha)</label>
-                        <textarea name="descricao-plano" id="descricao-plano" rows="4" placeholder="Ex: Acesso à todas as aulas Acompanhamento personalizado Nutrição inclusa"></textarea>
-                    </div>
-
-                    <!-- <button type="submit" class="btn-submit-plano">Criar Plano</button> -->
             </div>
 
+            <div class="card-title-description anime-bottom">
+                <strong>Atualize Exercicios desse Plano</strong>
+                <small>
+                    Modifique os exercicios associados a esse plano, adicione ou remova conforme necessário.
+                </small>
+            </div>
+
+            <div class="form-add-plano anime-bottom">
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 01</label>
+                        <input type="text" class="exercicio-item" placeholder="Ex: Treino de Peito">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 02</label>
+                        <input type="text" class="exercicio-item" placeholder="Ex: Treino de Costas">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 03</label>
+                        <input type="text" class="exercicio-item" placeholder="Ex: Treino de Pernas">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 04</label>
+                        <input type="text" class="exercicio-item" placeholder="Ex: Treino de Braços">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome-plano">Exercicio 05</label>
+                        <input type="text" class="exercicio-item" placeholder="Ex: Treino de Ombros">
+                    </div>
+                    
+            </div>
+            
+
             <div class="card-btns anime-bottom">
-                <button type="submit" class="btn-submit-plano">Editar Plano</button>
+                <button type="submit" class="btn-submit-plano" id="btn-submit-plano">Editar Plano</button>
                 <a href="../index.html" class="btn-cancelar-plano">Cancelar</a>
             </div>
 

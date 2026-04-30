@@ -6,10 +6,10 @@ export async function getCoach() {
 
     
     try {
-        const response = await fetch(`${url}coach/all`, {
+        const response = await fetch(`${url}coaches/all`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }
         });
 

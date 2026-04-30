@@ -43,11 +43,11 @@
                     </div>
     
                     <div class="input-label">
-                        <label>Telefone</label>
+                        <label>Email</label>
                         <input 
-                            type="text"
-                            placeholder="Ex: (+244) 9xxxxxxxx"
-                            id="phone-signIn"
+                            type="email"
+                            placeholder="Ex: joao@dominio.com"
+                            id="email-signIn"
                             required
                         />
                     </div>
@@ -59,14 +59,14 @@
 
                     <div class="input-label">
                         <label>Especialização</label>
-                        <select name="coach" id="coach-signIn" required>
+                        <select name="coach" id="especializacao-signIn" required>
                             <option value="" selected>Selecione sua especialização</option>
-                            <option value="Personal Trainer (Treinador Pessoal)">Personal Trainer (Treinador Pessoal)</option>
-                            <option value="Treinador de Musculação / Hipertrofia">Treinador de Musculação / Hipertrofia</option>
-                            <option value="Treinador Funcional">Treinador Funcional</option>
-                            <option value="Treinador de Reabilitação Física">Treinador de Reabilitação Física</option>
-                            <option value="Treinador de Performance Esportiva">Treinador de Performance Esportiva</option>
-    
+                            <option value="musculacao">musculacao</option>
+                            <option value="crossfit">crossfit</option>
+                            <option value="yoga">yoga</option>
+                            <option value="pilates">pilates</option>
+                            <option value="natacao">natacao</option>
+                            <option value="funcional">funcional</option>
                         </select>
                     </div>
 
@@ -74,9 +74,9 @@
                         <label>Gênero</label>
                         <select name="gender" id="gender-signIn" required>
                             <option value="" selected>Selecione seu gênero</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Outro">Outro</option>
+                            <option value="masculino">masculino</option>
+                            <option value="feminino">feminino</option>
+                            <option value="outro">outro</option>
                         </select>
                     </div>
 
@@ -94,9 +94,6 @@
                         />
                     </div>
 
-
-
-
                 </div>
 
                 <button class="button-dow" id="button-signIn">
@@ -109,7 +106,8 @@
         </section>
     </main>
 
-    <script src="./signin.js"></script>
+    <script type="module" src="./signup-coach.js"></script>
+
 </body>
 </html>
 

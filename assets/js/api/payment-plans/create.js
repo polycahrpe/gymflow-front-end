@@ -1,7 +1,7 @@
 import { urlBase } from '../../main.js';
 
 
-export async function createPaymentPlan(dataPlan) {
+export async function createPaymentPlan(dataPlan, token) {
 
     const url = urlBase();
     
@@ -9,7 +9,8 @@ export async function createPaymentPlan(dataPlan) {
         const response = await fetch(`${url}payment-plans/create`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(dataPlan)
         });

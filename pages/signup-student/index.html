@@ -43,11 +43,11 @@
                     </div>
     
                     <div class="input-label">
-                        <label>Telefone</label>
+                        <label>Email</label>
                         <input 
-                            type="text"
-                            placeholder="Ex: (+244) 9xxxxxxxx"
-                            id="phone-signIn"
+                            type="email"
+                            placeholder="Ex: joao.silva@example.com"
+                            id="email-signIn"
                             required
                         />
                     </div>
@@ -61,11 +61,6 @@
                         <label>Treinador</label>
                         <select name="coach" id="coach-signIn" required>
                             <option value="" selected>Selecione nome de um treinador</option>
-                            <option value="Leonahrdo Mbuxi">Leonahrdo Mbuxi</option>
-                            <option value="Maria Silva">Maria Silva</option>
-                            <option value="Carlos Pereira">Carlos Pereira</option>
-                            <option value="Ana Costa">Ana Costa</option>
-    
                         </select>
                     </div>
     
@@ -73,10 +68,7 @@
                         <label>Plano de pagamento</label>
                         <select name="plan" id="plan-signIn" required>
                             <option value="" selected>Selecione uma plano de pagamento</option>
-                            <option value="Plano Mensal">Plano Mensal (25.000 kz)</option>
-                            <option value="Plano Trimestral">Plano Trimestral (70.000 kz)</option>
-                            <option value="Plano Semestral">Plano Semestral (130.000 kz)</option>
-                            <option value="Plano Anual">Plano Anual (250.000 kz)</option>
+                            
                         </select>
                     </div>
 
@@ -88,9 +80,9 @@
                         <label>Gênero</label>
                         <select name="gender" id="gender-signIn" required>
                             <option value="" selected>Selecione seu gênero</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Outro">Outro</option>
+                            <option value="masculino">masculino</option>
+                            <option value="feminino">feminino</option>
+                            <option value="outro">outro</option>
                         </select>
                     </div>
 
@@ -120,7 +112,8 @@
         </section>
     </main>
 
-    <script src="./signin.js"></script>
+    <script type="module" src="./signup-student.js"></script>
+
 </body>
 </html>
 
