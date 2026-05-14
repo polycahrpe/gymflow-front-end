@@ -151,7 +151,7 @@ img {
             display: flex;
             align-items: center;
             gap: .4rem;
-            padding: .3rem .6rem;
+            padding: .3rem 1rem;
             border-radius: 50px;
             color: #fff;
             background: var(--text-color);

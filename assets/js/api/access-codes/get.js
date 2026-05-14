@@ -1,12 +1,12 @@
 import { urlBase } from '../../main.js';
 
-export async function getCoach(token) {
+export async function getAccessCodes(token) {
 
     const url = urlBase();
 
     
     try {
-        const response = await fetch(`${url}coaches/all`, {
+        const response = await fetch(`${url}access-codes/all`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

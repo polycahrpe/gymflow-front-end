@@ -7,12 +7,19 @@
     <link rel="icon" type="image/png" href="../../../assets//img/logo.png">
     <link rel="stylesheet" href="../../../assets/css/main.css">
     <link rel="stylesheet" href="../alunos.css">
+
+    <script type="module" src="../../../assets/js/header.js" defer></script>
+
+    <script type="module" src="./ficha-alunos.js" defer></script>
+
+
 </head>
 <body>
+
     <header>
         <nav class="container nav-header">
             <div class="logo-and-icon">
-                <a href="../home/index.html">
+                <a href="../../home/index.html">
                     <img src="../../../assets/img/logo.png" alt="Logo GymFlow">
                     <p>
                         Gym<span>Flow</span> 
@@ -21,19 +28,19 @@
                 <i class="bi bi-sliders"></i>
             </div>
             <div class="news-profile">
-                <a href="../news/index.html">
+                <a href="../../news/index.html">
                     <i class="bi bi-bell"></i>
                 </a>
                <div class="profile">
                 <div class="circle-profile">
-                    <a href="#">
-                        J
+                    <a href="#" id="circle-profile-header">
+                        ...
                     </a>
                 </div>
 
                 <div class="name-level">
-                   <a href="../perfil/index.html" class="name">Josué</a>
-                   <small class="level">Admin</small>
+                   <a href="../perfil/index.html" class="name" id="first-name">First Name</a>
+                   <small class="level" id="role">Admin</small>
                 </div>
                 
                </div>
@@ -41,80 +48,20 @@
         </nav>
     </header>
 
-    <aside class="aside" id="aside">
-        <div>
-            
-            <ul>
-                <li>
-                    <a href="../../home/index.html" class="link">
-                        <i class="bi bi-house icon-link"></i>
-                        <span class="text-link">Início</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../../alunos/index.html" class="link">
-                        <i class="bi bi-people   icon-link"></i>
-                        <span class="text-link">Alunos</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../../planos/index.html" class="link">
-                        <i class="bi bi-calendar3 icon-link"></i>
-                        <span class="text-link">Planos</span>
-                    </a>
-                </li>
     
-                 <li>
-                    <a href="../../pagamentos/index.html" class="link">
-                        <i class="bi bi-credit-card-2-front icon-link"></i>
-                        <span class="text-link">Pagam...</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="../../presenca/index.html" class="link">
-                        <i class="bi bi-calendar2-check icon-link"></i>
-                        <span class="text-link">Presenças</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../../treinos/index.html" class="link">
-                        <i class="bi bi-trophy icon-link"></i>
-                        <span class="text-link">Treinos</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../../coach/index.html" class="link">
-                        <i class="bi bi-person-plus icon-link"></i>
-                        <span class="text-link">Coach</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link">
-                        <i class="bi bi-box-arrow-right icon-link"></i>
-                        <span class="text-link">Terminar Ses...</span>
-                    </a>
-                </li>
-            </ul>
-            
-        </div>
-    </aside>
 
     <main class="container main-alunos">
 
-
         <section class="section-alunos">
 
-            <!-- <div class="card-search-and-btnadd anime-bottom">
+            
+            <section class="ficha anime-bottom">
 
-                <a class="link-add" href="../index.html">
+                 
+                <a class="btn-voltar" href="../index.html">
                     <i class="bi bi-arrow-left"></i>
                     <span>Voltar</span>
                 </a>
-
-            </div> -->
-            
-            <section class="ficha anime-bottom">
 
                 <div class="bcg">
 
@@ -124,17 +71,17 @@
 
                     <div class="circle-profile">
                         <div>
-                            <span>LM</span>
+                            <span id="initials">...</span>
                         </div>
     
                     </div>
     
                     <div class="name-email-more">
                         <div class="name-desc">
-                            <strong>Leonahrdo Mbuxi</strong>
+                            <strong id="full-name">...</strong>
                             <small>
                                 <i class="bi bi-bookmark-star"></i>
-                                <span>leonahrdo@gymflow.com</span>
+                                <span id="email">...</span>
                             </small>
                         </div>
                         <div class="btns">
@@ -145,10 +92,10 @@
 
                             <a href="../editar/index.html">Editar</a>
 
-                            <a class="download" href="#" download="Ficha">
-                                <i class="bi bi-download"></i>
+                            <a class="download" href="#" id="btn-action">
+                                <i class="bi bi-person"></i>
                                 <span>
-                                    Baixar Ficha
+                                    ...
                                 </span>
                             </a>
 
@@ -157,6 +104,123 @@
 
                 </div>
 
+                <div class="card-content">
+
+                    <div class="card-title-description anime-bottom">
+                        <strong>Dados Pessoais</strong>
+                        <small>
+                            Aqui você pode ver as informações pessoais do aluno, incluindo dados de contato e informações de perfil.
+                        </small>
+                    </div>
+
+                    <ul>
+                        <li class="anime-bottom">
+                            <strong>Nome do Aluno</strong>
+                            <span id="nome-aluno">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Email</strong>
+                            <span id="email-aluno">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Genero</strong>
+                            <span id="genero-aluno">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Estado</strong>
+                            <span id="estado-aluno">
+                                ...
+                            </span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-title-description anime-bottom">
+                        <strong>Treinador</strong>
+                        <small>
+                            Aqui você pode ver o treinador designado para o aluno, incluindo informações sobre suas qualificações, experiência e especialidades.
+                        </small>
+                    </div>
+
+                    <ul>
+
+                        <li class="anime-bottom">
+                            <strong>Nome do Treinador</strong>
+                            <span id="nome-treinador">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Email</strong>
+                            <span id="email-treinador">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Especialidade</strong>
+                            <span id="especialidade-treinador">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Genero</strong>
+                            <span id="genero-treinador">
+                                ...
+                            </span>
+                        </li>
+
+                    </ul>
+                    
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-title-description anime-bottom">
+                        <strong>Plano de Pagamento</strong>
+                        <small>
+                            Aqui você pode ver o plano de pagamento escolhido pelo aluno, incluindo detalhes sobre a frequência, valor e condições do contrato.
+                        </small>
+                    </div>
+
+                    <ul>
+                        <li class="anime-bottom">
+                            <strong>Nome do Plano</strong>
+                            <span id="nome-plano">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Valor do Plano</strong>
+                            <span id="valor-plano">
+                                ...
+                            </span>
+                        </li>
+
+                        <li class="anime-bottom">
+                            <strong>Duração</strong>
+                            <span id="duracao-plano">
+                                ...
+                            </span>
+                        </li>
+                    </ul>
+
+                </div>
 
             </section>
 

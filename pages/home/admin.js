@@ -16,35 +16,45 @@ async function listCoaches(token) {
 
         listStudentCoachAdmin.innerHTML = "";
 
-        coaches.forEach(coach => {
-            const listItem = document.createElement("li");
-            listItem.innerHTML = `
-                <div class="card-img-name">
+        const listCoachesActive = coaches.filter(coach => coach.ativo === true);
+        console.log(listCoachesActive);
 
-                    <div class="img">
-                        <div>
-                            <span>${coach.nome.charAt(0)}</span>
+        if (listCoachesActive.length === 0) {
+            listStudentCoachAdmin.innerHTML = "<li>Nenhum coach ativo encontrado.</li>";
+            return;
+        } else {
+            listCoachesActive.forEach(coach => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <div class="card-img-name">
+            
+                        <div class="img">
+                            <div>
+                        <span>${coach.nome.charAt(0)}</span>
+                            </div>
                         </div>
+            
+                        <div class="name">${coach.nome}</div>
+            
                     </div>
+            
+                    <div class="card-plan">
+                        <strong>Especialidade</strong>
+                        <small>(${coach.especialidade})</small>
+                    </div>
+            
+                    <div class="card-state">
+                        <i class="bi bi-dot"></i>
+                        0${coach.students.length} alunos
+                    </div>
+            
+                `;
+            
+                listStudentCoachAdmin.appendChild(listItem);
+            });
 
-                    <div class="name">${coach.nome}</div>
-
-                </div>
-
-                <div class="card-plan">
-                    <strong>Especialidade</strong>
-                    <small>(${coach.especialidade})</small>
-                </div>
-
-                <div class="card-state">
-                    <i class="bi bi-dot"></i>
-                    3 alunos
-                </div>
-
-            `;
-
-            listStudentCoachAdmin.appendChild(listItem);
-        });
+        }
+        
         
     } catch (error) {
         console.error('Erro ao obter os coaches:', error);

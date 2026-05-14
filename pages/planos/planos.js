@@ -68,7 +68,7 @@ function listarPlanos(planos) {
                 </span>
                 <span>
                     <i class="bi bi-person"></i>
-                    <small>00 Alunos</small>
+                    <small>0${plano.students.length} Alunos</small>
                 </span>
             </div>
 

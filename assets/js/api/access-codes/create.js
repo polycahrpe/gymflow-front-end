@@ -1,13 +1,13 @@
 import { urlBase } from '../../main.js';
 
-export async function getCoach(token) {
+
+export async function generate(token) {
 
     const url = urlBase();
-
     
     try {
-        const response = await fetch(`${url}coaches/all`, {
-            method: 'GET',
+        const response = await fetch(`${url}access-codes/generate`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
@@ -19,9 +19,11 @@ export async function getCoach(token) {
         }
 
         const data = await response.json();
+        console.log(data);
 
-        return data; // opcional, caso queiras usar fora
+        return data;
     } catch (error) {
         console.error('Erro:', error);
+        throw error;
     }
 }

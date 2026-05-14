@@ -1,79 +1,83 @@
-import { getSession, validateEmail } from "../../../assets/js/main.js";
+import { getSession } from "../../../assets/js/main.js";
+import { generate } from "../../../assets/js/api/access-codes/create.js";
+import { getAccessCodes } from "../../../assets/js/api/access-codes/get.js";
 
+const btnGenerateAccessCode = document.querySelector("#btn-generate-access-code");
 
-const emailStudent = document.querySelector("#email-aluno")
-const planStudent = document.querySelector("#plan-aluno")
-const coachStudent = document.querySelector("#coach-aluno")
-const btnSubmit = document.querySelector("#btn-submit-aluno")
+function listAccessCode(listCode) {
+    const ulAccessCode = document.querySelector("#ul-access-code");
 
+    // limpa a lista
+    ulAccessCode.innerHTML = "";
 
-let dataStudent = {
-    "email": "",
-    "plan": "",
-    "coach": ""
-}   
+    // ordena: não usados (false) primeiro, usados (true) depois
+    listCode.sort((a, b) => a.usado - b.usado);
 
-function validateForm() {
+    listCode.forEach(item => {
+        const li = document.createElement("li");
 
-    if (!emailStudent.value.trim() || !planStudent.value.trim() || !coachStudent.value.trim()) {
-        alert("Por favor, preencha todos os campos.");
-        return false;
-    }
+        if (item.usado) {
+            li.style.backgroundColor = "#f6f7f8"
+        }
 
-    if (!validateEmail(emailStudent.value.trim())) {
-        alert("Por favor, insira um endereço de email válido.");
-        return false;
-    }
+        li.innerHTML = `
+            <strong>${item.code}</strong>
+            <span>${item.usado ? "Usado" : "Não usado"}</span>
+        `;
 
-    if (planStudent.value === "0") {
-        alert("Por favor, selecione um plano.");
-        return false;
-    }
-
-    if (coachStudent.value === "0") {
-        alert("Por favor, selecione um coach.");
-        return false;
-    }
-
-    return true
-}
-
-
-function renderAdmin() {
-
-    btnSubmit.addEventListener("click", async () => {
-        if (!validateForm()) 
-            return;
-
-        dataStudent.email = emailStudent.value.trim();
-        dataStudent.plan = planStudent.value;
-        dataStudent.coach = coachStudent.value;
-
-        console.log(dataStudent);
+        ulAccessCode.appendChild(li);
     });
-
 }
 
+async function renderAdmin(session) {
+    const response = await getAccessCodes(session.access_token);
+
+    if (response) {
+        listAccessCode(response);
+    }
+
+    btnGenerateAccessCode.addEventListener("click", async () => {
+        // guardar texto original
+        const originalText = btnGenerateAccessCode.textContent;
+
+        // desabilitar botão e mudar texto
+        btnGenerateAccessCode.disabled = true;
+        btnGenerateAccessCode.textContent = "Gerando...";
+
+        try {
+            const newCode = await generate(session.access_token);
+
+            if (newCode) {
+                const response = await getAccessCodes(session.access_token);
+
+                if (response) {
+                    listAccessCode(response);
+                }
+            }
+        } finally {
+            // reabilitar botão e restaurar texto
+            btnGenerateAccessCode.disabled = false;
+            btnGenerateAccessCode.textContent = originalText;
+        }
+    });
+}
 
 function error404() {
     window.location.href = "../../404/index.html";
 }
 
-
 function initNovoAluno() {
-
     const session = getSession();
-    const { user } = session;    
+    const { user } = session;
 
     switch (user.role) {
         case "admin":
-            renderAdmin();
+            renderAdmin(session);
             break;
         default:
             error404();
             break;
     }
-
 }
 
 initNovoAluno();

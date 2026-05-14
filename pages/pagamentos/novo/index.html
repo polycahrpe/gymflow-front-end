@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Pagamento | GymFlow</title>
+    <link rel="icon" href="../../../assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <link rel="stylesheet" href=".././pagamentos.css">
+
+    <script type="module" src="../../../assets/js/header.js" defer></script>
+    <script type="module" src="./novoPagamento.js" defer></script>
+
+</head>
+<body>
+
+    <header>
+        <nav class="container nav-header">
+            <div class="logo-and-icon">
+                <a href="../../home/index.html">
+                    <img src="../../../assets/img/logo.png" alt="Logo GymFlow">
+                    <p>
+                        Gym<span>Flow</span> 
+                    </p>
+                </a>
+                <i class="bi bi-sliders"></i>
+            </div>
+            <div class="news-profile">
+                <a href="../../news/index.html">
+                    <i class="bi bi-bell"></i>
+                </a>
+               <div class="profile">
+                <div class="circle-profile">
+                    <a href="#" id="circle-profile-header">
+                        ...
+                    </a>
+                </div>
+
+                <div class="name-level">
+                   <a href="../../perfil/index.html" class="name" id="first-name">First Name</a>
+                   <small class="level" id="role">Admin</small>
+                </div>
+                
+               </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="container main-pagamentos">
+
+
+        <section class="section-novo-pagamentos">
+
+            <div class="card-search-and-btnadd anime-bottom">
+
+                <a class="link-add" href="../index.html">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Voltar</span>
+                </a>
+
+            </div>
+            
+            <div class="card-title-description anime-bottom">
+                <strong>Novo Pagamento</strong>
+                <small>
+                    Aqui você pode registrar um novo pagamento para um cliente. Preencha os detalhes do pagamento, como o valor, a data e o método de pagamento, para manter um registro preciso das transações financeiras.
+                </small>
+            </div>
+
+            <article class="card-add-pagamento anime-bottom">
+                <form action="#" method="post" class="form-add-pagamento">
+
+                    <div class="input-group">
+                        <label for="cliente">Cliente</label>
+                        <select name="cliente" id="cliente" required>
+                            <option value="">Selecione um cliente</option>
+                            <option value="cliente1">Cliente 1</option>
+                            <option value="cliente2">Cliente 2</option>
+                            <option value="cliente3">Cliente 3</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="valor">Valor</label>
+                        <input type="number" name="valor" id="valor" placeholder="R$ 0,00" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="data">Data do Pagamento</label>
+                        <input type="date" name="data" id="data" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="metodo">Método de Pagamento</label>
+                        <select name="metodo" id="metodo" required>
+                            <option value="">Selecione um método de pagamento</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="pix">PIX</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Registrar Pagamento</button>
+
+                </form>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

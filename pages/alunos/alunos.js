@@ -1,4 +1,5 @@
 import { getStudent } from "../../assets/js/api/students/get.js";
+import { deleteStudent } from "../../assets/js/api/students/delete.js";
 import { getSession } from "../../assets/js/main.js";
 
 const btnAddStudent = document.querySelector("#btn-add-student")
@@ -14,16 +15,42 @@ function showErrorCard(textError) {
     cardError.style.display = 'flex';
 }
 
-async function renderCardStudents(role, token) {
+async function deletStudents(id, token) {
 
+
+    const confirmDelete = confirm("Tem certeza que deseja deletar este aluno?");
+
+    if (!confirmDelete) 
+        return;
+
+    try {
+        const session = getSession();
+        
+        const result = await deleteStudent(id, token);
+
+        if (!result) {
+            alert("Erro ao deletar o aluno, tente novamente mais tarde.");
+            return;
+        }
+
+        alert("Aluno deletado com sucesso!");
+        window.location.reload();
+    
+    } catch (error) {
+        console.error(error);
+        alert("Erro ao deletar o aluno, tente novamente mais tarde.");
+    }
+    
+
+}
+
+async function renderCardStudents(user, token) {
 
     const listCardStudents = document.querySelector("#list-card-students")
 
 
     const response = await getStudent(token)
 
-    console.log(response);
-    
 
 
     if (!response) {
@@ -36,58 +63,75 @@ async function renderCardStudents(role, token) {
         return;
     }
 
-    const students = response.filter(student => student.ativo === true)
 
-    if (students.length === 0) {
-        showErrorCard("Não há alunos para mostrar, tente adicionar um novo aluno.")
-        return;
-    } else {
-        students.forEach(student => {
+    response.forEach(student => {
     
-            if ( student.ativo === true ) {
-    
-                const cardStudent = document.createElement("div")
-                cardStudent.classList.add("card-aluno")
+        const cardStudent = document.createElement("div")
+        cardStudent.classList.add("card-aluno")
         
-                cardStudent.innerHTML = `
-                    <div class="info-aluno">
-                        <div class="circle-profile-aluno">
-                            <div>
-                                <span>
-                                    ${student.nome.split(" ")[0].charAt(0)}${student.nome.split(" ")[1].charAt(0)}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="name-and-plano">
-                            <a href="#">${student.nome}</a>
-                            <small>
-                                <i class="bi bi-calendar3"></i>
-                                ${student.plan}
-                            </small>
-                        </div>
-        
-                        <a class="estado" href="./ficha/index.html">Ver a Ficha</a>
+        cardStudent.innerHTML = `
+            <div class="info-aluno">
+                <div class="circle-profile-aluno">
+                    <div>
+                        <span>
+                            ${student.nome.split(" ")[0].charAt(0)}${student.nome.split(" ")[1].charAt(0)}
+                        </span>
                     </div>
+                </div>
+                <div class="name-and-plano">
+                    <a href="#">${student.nome}</a>
+                    <small>
+                        <i class="bi bi-award"></i>
+                        ${student.ativo ? "Ativo" : "Inativo"}
+                    </small>
+                </div>
         
-                    <div class="card-btns" style="display: ${role === "admin" ? "flex" : "none"}">
-                            <a href="./editar/index.html" class="btn-edit">
-                                <i class="bi bi-pencil"></i>
-                                <span>Editar</span>
-                            </a>
+                <a class="estado" id="btn-view-profile" href="./ficha/index.html">Ver a Ficha</a>
+            </div>
         
-                            <a href="#" class="btn-delete">
-                                <i class="bi bi-trash"></i>
-                                <span>Eliminar</span>
-                            </a>
-                    </div>
-                `
-                
-                listCardStudents.appendChild(cardStudent)
-    
-            }
-    
-        })
-    }
+            <div class="card-btns" style="display: ${user.role === "admin" ? "flex" : "none"}">
+        
+                    <a href="#" class="btn-delete">
+                        <i class="bi bi-trash"></i>
+                        <span>Eliminar</span>
+                    </a>
+
+            </div>
+
+            `
+
+            const btnViewProfile = cardStudent.querySelector("#btn-view-profile");
+            
+            btnViewProfile.addEventListener("click", (e) => {    
+                e.preventDefault();
+
+                localStorage.setItem("studentId", student.id)
+                window.location.href = "./ficha/index.html"
+            })
+
+
+           const btnDelete = cardStudent.querySelector(".btn-delete");
+
+            btnDelete.addEventListener("click", async (e) => {
+                e.preventDefault();
+
+                btnDelete.disabled = true;
+                const originalText = btnDelete.textContent;
+                btnDelete.textContent = "Eliminando...";
+
+                try {
+                    await deletStudents(student.id, token);
+                } catch (error) {
+                    console.error(error);
+
+                    btnDelete.disabled = false;
+                    btnDelete.textContent = originalText;
+                }
+            });
+        
+        listCardStudents.appendChild(cardStudent)
+        
+    })
 
 
 

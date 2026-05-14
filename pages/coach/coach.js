@@ -12,23 +12,23 @@ function showErrorCard(textError) {
     cardError.style.display = 'flex';
 }
 
-async function renderCardCoach() {
+async function renderCardCoach(session) {
 
-    const response = await getCoach();
+
+    const response = await getCoach(session.access_token);
+
 
     if (!response) {
         showErrorCard("Não foi possível carregar os coaches, tente novamente mais tarde.");
         return;
     }
 
-    const { coaches } = response;    
-
-    if (coaches.length === 0) {
+    if (response.length === 0) {
         showErrorCard("Não há coaches para mostrar.");
         return;
     }
 
-    coaches.forEach(coach => {
+    response.forEach(coach => {
         const cardCoach = document.createElement("div")
         cardCoach.classList.add("card-coach")
 
@@ -38,12 +38,12 @@ async function renderCardCoach() {
                 <div class="circle-profile-coach">
                     <div>
                         <span>
-                            ${coach.name.split(" ")[0].charAt(0)}${coach.name.split(" ")[1].charAt(0)}
+                            ${coach.nome.split(" ")[0].charAt(0)}
                         </span>
                     </div>
                 </div>
                 <div class="name-and-plano">
-                    <a href="#">${coach.name}</a>
+                    <a href="#">${coach.nome}</a>
                     <small>
                         <i class="bi bi-bookmark-star"></i>
                         <span>Coach</span>
@@ -71,9 +71,9 @@ async function renderCardCoach() {
     });
 }   
 
-function renderAdmin() {
+function renderAdmin(session) {
 
-    renderCardCoach();
+    renderCardCoach(session);
     
 }
 
@@ -89,10 +89,9 @@ function initCoach() {
     const { user } = session;
 
 
-
     switch (user.role) {
         case "admin":
-            renderAdmin();
+            renderAdmin(session);
             break;
         default:
             error404();

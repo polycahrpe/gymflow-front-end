@@ -8,6 +8,7 @@ const emailSignIn = document.querySelector('#email-signIn');
 const coachSignIn = document.querySelector('#coach-signIn');
 const planSignIn = document.querySelector('#plan-signIn');
 const genderSignIn = document.querySelector('#gender-signIn');
+const acessCodeSignIn = document.querySelector('#acess-code-signIn');
 const passwordSignIn = document.querySelector('#password-signIn');
 const buttonSignIn = document.querySelector('#button-signIn');
 
@@ -17,7 +18,8 @@ const data = {
   "password": "",
   "genero": "",
   "coach_id": "",
-  "payment_plan_id": ""
+  "payment_plan_id": "",
+  "access_code": ""
 }
 
 async function populatePaymentPlanOptions() {
@@ -65,6 +67,11 @@ function validateForm() {
         return false;
     }   
 
+    if (acessCodeSignIn.value.trim().length < 5) {
+        alert('O código de acesso deve ter pelo menos 5 caracteres.');
+        return false;
+    }
+
     return true;
 }
 
@@ -85,8 +92,10 @@ buttonSignIn.addEventListener('click', async (e) => {
     data.genero = genderSignIn.value.trim();
     data.coach_id = coachSignIn.value.trim();
     data.payment_plan_id = planSignIn.value.trim();
+    data.access_code = acessCodeSignIn.value.trim()
 
     try {
+        
         const response = await create(data);
 
         console.log(response);

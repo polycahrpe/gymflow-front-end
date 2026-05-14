@@ -263,7 +263,7 @@
                 border-radius: 1.5rem;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                gap: 1.5rem;
                 transition: .3s all;
                 cursor: pointer;
                 border: 2px solid transparent;
@@ -276,9 +276,11 @@
 
 
                 .card-img-name {
+                    width: 35%;
                     display: flex;
                     align-items: center;
                     gap: .75rem;
+
 
                     .img {
                         width: 48px;
@@ -307,6 +309,7 @@
                 }
 
                 .card-plan {
+                    width: 40%;
                     display: flex;
                     align-items: center;
                     gap: .25rem;
@@ -331,6 +334,13 @@
                 }
             }
         }
+    }
+
+    .link-coaches {
+        margin: 0 auto;
+        font-size: var(--small-font-size);
+        color: var(--first-color);
+        padding: 1.5rem 0;
     }
 
     .card-presenca-semanal {
