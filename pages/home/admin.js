@@ -1,5 +1,6 @@
 import { getCoach } from "../../assets/js/api/coach/get.js";
 import { getStudent } from "../../assets/js/api/students/get.js"
+import { getPayment } from "../../assets/js/api/payments/get.js";
 
 
 async function listCoaches(token) {
@@ -81,6 +82,24 @@ async function countStudents(token) {
 
 }
 
+async function countPayments(token) {
+    const countPayments = document.querySelector("#count-payments");
+
+    try {
+        const payments = await getPayment(token);
+
+        if (!payments || payments.length === 0) {
+            countPayments.textContent = "00";
+            return;
+        }
+
+        countPayments.textContent =  payments.length < 10 ? `0${payments.length}` : payments.length;
+
+    } catch (error) {
+        console.error('Erro ao obter os pagamentos:', error);
+    }
+}
+
 
 
 
@@ -90,5 +109,5 @@ export async function admin(data) {
 
     await listCoaches(data.access_token);   
     await countStudents(data.access_token); 
-
+    await countPayments(data.access_token);
 }

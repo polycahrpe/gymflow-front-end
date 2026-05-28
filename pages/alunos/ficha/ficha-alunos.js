@@ -125,6 +125,9 @@ function showDataStudent(student) {
     const generoTreinador = document.querySelector("#genero-treinador");
     generoTreinador.textContent = student.coach ? student.coach.genero : "Sem gênero";
 
+    const prazoPlano = document.querySelector("#prazo-plano");
+    prazoPlano.textContent = student.dias_restantes ? `${student.dias_restantes} dias para expirar` : "Sem prazo";
+
 
 }
 

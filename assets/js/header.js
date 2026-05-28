@@ -11,8 +11,17 @@ function initHeader() {
   
     if (circleProfileHeader) circleProfileHeader.textContent = user.nome.split(" ")[0].charAt(0);
     if (nameEl) nameEl.textContent = user.nome.split(" ")[0];
-    if (roleEl) roleEl.textContent = user.role;
-  
+
+    if (user.role === "admin") {
+        if (roleEl) roleEl.textContent = "Administrador";
+    } else if (user.role === "coach") {
+        if (roleEl) roleEl.textContent = "Treinador";
+    } else if (user.role === "student") {
+        if (roleEl) roleEl.textContent = "Aluno";
+    } else {
+        if (roleEl) roleEl.textContent = "Error role";
+    }
+
 }
 
 initHeader();

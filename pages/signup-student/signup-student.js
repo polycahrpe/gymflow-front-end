@@ -98,10 +98,8 @@ buttonSignIn.addEventListener('click', async (e) => {
         
         const response = await create(data);
 
-        console.log(response);
-        
 
-        alert('Cadastrado com sucesso, aguarde a aprovação do administrador para acessar a plataforma.');
+        alert('Cadastrado com sucesso, Faça login para acessar sua conta.');
         window.location.href = '../signIn/index.html';
 
     } catch (error) {

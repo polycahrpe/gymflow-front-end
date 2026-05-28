@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Pagamento | GymFlow</title>
+    <title>Editar Pagamento | GymFlow</title>
     <link rel="icon" href="../../../assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../assets/css/main.css">
     <link rel="stylesheet" href=".././pagamentos.css">
 
     <script type="module" src="../../../assets/js/header.js" defer></script>
-    <script type="module" src="./novoPagamento.js" defer></script>
+    <script type="module" src="./editarPagamento.js" defer></script>
 
 </head>
 <body>
@@ -50,7 +50,7 @@
     <main class="container main-pagamentos">
 
 
-        <section class="section-novo-pagamentos">
+        <section class="section-editar-pagamentos">
 
             <div class="card-search-and-btnadd anime-bottom">
 
@@ -62,21 +62,13 @@
             </div>
             
             <div class="card-title-description anime-bottom">
-                <strong>Novo Pagamento</strong>
+                <strong>Editar Pagamento</strong>
                 <small>
-                    Aqui você pode registrar um novo pagamento para um cliente. Preencha os detalhes do pagamento, como o valor, a data e o método de pagamento, para manter um registro preciso das transações financeiras.
+                    Aqui você pode editar um pagamento existente, atualizando as informações conforme necessário.
                 </small>
             </div>
 
             <article class="card-add-pagamento anime-bottom">
-
-                <div class="input-group">
-                    <label for="Aluno">Selecione um Aluno</label>
-                    <select name="Aluno" id="select-aluno" required>
-                        <option value="">Nenhum aluno selecionado</option>
-                        
-                    </select>
-                </div>
 
                 <div class="card-data-aluno anime-bottom" id="card-data-aluno">
 
@@ -84,13 +76,13 @@
 
                         <div class="img">
                             <div>
-                                <span>SP</span>
+                                <span id="initials-aluno-editar-pagamento">...</span>
                             </div>
                         </div>
 
                         <div class="name">
-                            <strong id="nome-aluno-pagamento">...</strong>
-                            <small id="email-aluno-pagamento">...</small>
+                            <strong id="nome-aluno-editar-pagamento">...</strong>
+                            <small id="email-aluno-editar-pagamento">...</small>
                         </div>
 
                     </div>
@@ -101,49 +93,44 @@
                         <ul>
                             <li>
                                 <strong>Nome</strong>
-                                <span id="nome-plano-pagamento">...</span>
+                                <span id="nome-plano-editar-pagamento">...</span>
                             </li>
                             <li>
                                 <strong>Valor</strong>
-                                <span id="valor-plano-pagamento">...</span>
+                                <span id="valor-plano-editar-pagamento">...</span>
                             </li>
                             <li>
                                 <strong>Prazo</strong>
-                                <span id="prazo-plano-pagamento">...</span>
+                                <span id="prazo-plano-editar-pagamento">...</span>
                             </li>
                         </ul>
                     </div>
 
                     <div class="desc-plano-pagamento">
-                        <strong class="title">Novo Pagamento</strong>
+                        <strong class="title">Editar Pagamento</strong>
 
                         <div class="input-group-button">
 
                             <div class="input-group">
                                 <label for="Aluno">Valor Pago</label>
-                                <input type="text" id="valor-pago" placeholder="...">
+                                <input type="text" id="valor-editar-pagamento" placeholder="...">
                             </div>
 
                             <div class="input-group">
                                 <label for="Aluno">Data de Pagamento</label>
-                                <input type="date" id="data-pagamento" placeholder="dd/mm/aaaa">
+                                <input type="date" id="data-editar-pagamento" placeholder="dd/mm/aaaa" disabled>
                             </div>
 
                             <div class="input-group">
                                 <label for="Aluno">Observação</label>
-                                <textarea name="observacao" id="observacao-pagamento" placeholder="Digite uma observação..."></textarea>
+                                <textarea name="observacao" id="observacao-editar-pagamento" placeholder="Digite uma observação..."></textarea>
                             </div> 
 
-                            
-                            <br />
-                            <br />
-                            <br />
                             <button id="btn-submit-pagamento">Registar</button>
                         </div>
                     </div>
 
                 </div>
-
 
             </article>
 
