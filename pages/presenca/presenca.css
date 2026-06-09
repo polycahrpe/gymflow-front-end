@@ -10,11 +10,10 @@
 .section-precensa {
     border-top: 2px solid var(--body-color-light);
     position: relative;
-    padding: 3rem 0rem 0rem 0rem;
+    padding: 3rem 0rem 3rem 0rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
 
     .title {
         font-size: var(-small-font-size);
@@ -89,4 +88,5 @@
             width: 20%;
         }
     }
+
 }

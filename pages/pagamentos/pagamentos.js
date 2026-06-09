@@ -42,36 +42,38 @@ async function renderPayments(payments) {
                 ${payment.status === "pago" ? "Pago" : "Pendente"}
             </span></td>
             <td class="actions">
-                <a href="./editar/index.html" id="edit-btn" data-id="${payment.id}">
-                    <i class="bi bi-pencil"></i>
-                </a>
+                
                 <button class="delete-btn" data-id="${payment.id}">
                     <i class="bi bi-trash"></i>
                 </button>
             </td>
         `;
 
-        const editBtn = itemPagamento.querySelector("#edit-btn");
+        // <a href="./editar/index.html" id="edit-btn" data-id="${payment.id}">
+        //     <i class="bi bi-pencil"></i>
+        // </a>
 
-        editBtn.addEventListener("click", async () => {
-            // Desabilita o botão
-            editBtn.disabled = true;
+        // const editBtn = itemPagamento.querySelector("#edit-btn");
 
-            try {
-                const paymentId = editBtn.getAttribute("data-id");
+        // editBtn.addEventListener("click", async () => {
+        //     // Desabilita o botão
+        //     editBtn.disabled = true;
 
-                localStorage.setItem("paymentUpdateId", paymentId);
+        //     try {
+        //         const paymentId = editBtn.getAttribute("data-id");
 
-                // Simulação do processo
-                // await algumaFuncao();
+        //         localStorage.setItem("paymentUpdateId", paymentId);
 
-            } catch (error) {
-                console.error(error);
-            } finally {
-                // Reabilita o botão após terminar
-                editBtn.disabled = false;
-            }
-        });
+        //         // Simulação do processo
+        //         // await algumaFuncao();
+
+        //     } catch (error) {
+        //         console.error(error);
+        //     } finally {
+        //         // Reabilita o botão após terminar
+        //         editBtn.disabled = false;
+        //     }
+        // });
 
 
         const deleteBtn = itemPagamento.querySelector(".delete-btn");

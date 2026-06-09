@@ -118,7 +118,6 @@
                 </p>
             </div>
 
-
             <!-- componentes para o admin -->
 
             <div class="card-stactics anime-bottom" id="card-stactcs-admin">
@@ -221,7 +220,6 @@
             </div>
 
             <!-- componentes para o admin fim -->
-
 
 
             <!-- componentes para o coach -->
@@ -373,45 +371,9 @@
             <!-- componentes para o coach fim -->
 
 
-
             <!-- componentes para o student -->
 
-            <div class="card-my-plano" id="card-my-plano">
-                
-
-                <div class="content anime-bottom">
-
-                    <div class="nome">
-                        <strong id="nome-my-plano">...</strong>
-                        <small>Nome do Plano</small>
-                    </div>
-
-                    <div class="data-expiracao">
-                        <strong id="duracao-my-plano">...</strong>
-                        <small>Duração</small>
-                    </div>
-
-                    <div class="preco">
-                        <strong id="preco-my-plano">...</strong>
-                        <small>Preço</small>
-                    </div>
-
-                    <div class="prazo">
-                        <strong id="prazo-my-plano">...</strong>
-                        <small>Prazo de Expiração</small>
-                    </div>
-
-                </div>
-
-
-
-            </div>
-
             <div class="card-my-coach anime-bottom" id="card-my-coach">
-                <div class="card-title-description anime-bottom">
-                    <strong>Treinador</strong>
-                    
-                </div>
 
                 <div class="content">
                     <div class="card-img-name anime-bottom">
@@ -426,7 +388,7 @@
                             <strong class="name" id="name-my-coach">...</strong>
                             <small class="especialidade" >
                                 <i class="bi bi-caret-up-fill"></i>
-                                <span id="especialidade-my-coach">...</span>
+                                <span id="email-my-coach">...</span>
                             </small>
 
                             <ul class="student" id="list-student-my-coach">
@@ -439,8 +401,8 @@
 
                     <ul class="list-content-coach anime-bottom">
                         <li>
-                            <strong>Email</strong>
-                            <small id="email-my-coach">...</small>
+                            <strong>Especialidade</strong>
+                            <small id="especialidade-my-coach">...</small>
                         </li>
 
                         <li>
@@ -458,10 +420,59 @@
 
             </div>
 
+            <table class="table-my-plano anime-bottom" id="card-my-plano" >
+                <thead>
+                    <tr>
+                        <th>Plano</th>
+                        <th>Duração</th>
+                        <th>Preço</th>
+                        <th>Expira em</th>
+                    </tr>
+                </thead>
 
-            <!-- componentes para o student fim -->
+                <tbody>
+                    <tr>
+                        <td id="nome-my-plano">...</td>
+                        <td id="duracao-my-plano">...</td>
+                        <td id="preco-my-plano">...</td>
+                        <td id="prazo-my-plano">...</td>
+                    </tr>
+                </tbody>
+            </table>
 
+            <div class="card-pagamento-corrente" id="card-my-payment">
+
+                <ul>
+                    <li class="anime-bottom">
+                        <strong>Valor pago</strong>
+                        <span id="valor-pago-my-payment" class="">
+                            ...
+                        </span>
+                    </li>
+                    <li class="anime-bottom">
+                        <strong>Data de Pagamento</strong>
+                        <span id="data-pagamento-my-payment" class="">
+                            ...
+                        </span>
+                    </li>
+                    <li class="anime-bottom">
+                        <strong>Data de Vencimento</strong>
+                        <span id="data-vencimento-my-payment" class="">
+                            ...
+                        </span>
+                    </li>
+                    <li class="anime-bottom">
+                        <strong>Descrição</strong>
+                        <span id="descricao-my-payment" class="">
+                            ...
+                        </span>
+                    </li>
+                </ul>
+                
+                
+            </div>
             
+            <!-- componentes para o student fim -->
 
         </section>
 
@@ -484,9 +495,35 @@
 
             </div>
 
-           <p class="description anime-bottom">
-                Aqui podes ver o teu perfil, editar os teus dados pessoais, mudar a tua senha e muito mais...
-           </p>
+            <p class="description anime-bottom">
+                    Aqui podes ver o teu perfil, editar os teus dados pessoais, mudar a tua senha e muito mais...
+            </p>
+
+            <div class="card-marcar-precensa anime-bottom">
+
+                <div class="card-horario anime-bottom" id="card-hora-entrada">
+                    <strong>Hora de Entrada</strong>
+                    <span id="hora-entrada">...</span>
+                    <small class="estado-presenca" id="estado-presenca-entrada">...</small>
+                </div>
+                <button id="btn-marcar-presenca" class="anime-bottom">
+                    <i class="bi bi-fingerprint"></i>
+                    <span>Marcar Entrada</span>
+                </button>
+
+                <div class="line"></div>
+
+                <div class="card-horario anime-bottom" id="card-hora-saida">
+                    <strong>Hora de Saída</strong>
+                    <span id="hora-saida">...</span>
+                    <small class="estado-presenca" id="estado-presenca-saida">...</small>
+                </div>
+                <button id="btn-marcar-saida" class="anime-bottom">
+                    <i class="bi bi-fingerprint"></i>
+                    <span>Marcar Saída</span>
+                </button>
+
+            </div>
 
         </section>
 

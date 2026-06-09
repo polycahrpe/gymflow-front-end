@@ -1,16 +1,16 @@
 import { urlBase } from '../../main.js';
 
-export async function getPresenca(token) {
+
+export async function getPresencaHoje(idStudent, token) {
 
     const url = urlBase();
-
     
     try {
-        const response = await fetch(`${url}attendances/all`, {
+        const response = await fetch(`${url}attendances/today/${idStudent}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`  
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -23,5 +23,6 @@ export async function getPresenca(token) {
         return data;
     } catch (error) {
         console.error('Erro:', error);
+        throw error;
     }
 }

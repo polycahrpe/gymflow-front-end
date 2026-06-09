@@ -51,35 +51,3 @@ export function validateEmail(email) {
     return true;
 
 }
-
-
-
-// export function getSession() {
-
-//     return JSON.parse(localStorage.getItem('gymFlowSession')) || {
-//       user: {
-//         name: "Leo Nahrdo",
-//         role: "coach",
-//         student: [],
-//         token: "..."
-//       }
-//     };
-
-    
-// }
-
-
-
-// export function getSession() {
-
-//     return JSON.parse(localStorage.getItem('gymFlowSession')) || {
-//       user: {
-//         name: "Leo Nahrdo",
-//         role: "admin",
-//         student: [],
-//         token: "..."
-//       }
-//     };
-
-    
-// }

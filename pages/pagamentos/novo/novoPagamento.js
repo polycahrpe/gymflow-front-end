@@ -116,10 +116,16 @@ async function getAndListStudents(session) {
         const students = await getStudent(session.access_token);
 
         students.forEach(student => {
-            const option = document.createElement("option");
-            option.value = student.id;
-            option.textContent = student.nome;
-            selectAluno.appendChild(option);
+
+            if (student.dias_restantes === 0) {
+
+                const option = document.createElement("option");
+                option.value = student.id;
+                option.textContent = student.nome;
+                selectAluno.appendChild(option);
+
+            }
+
         });
 
     } catch (error) {

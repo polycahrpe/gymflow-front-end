@@ -1,17 +1,18 @@
 import { urlBase } from '../../main.js';
 
-export async function getPresenca(token) {
+
+export async function marcarEntrada(dataPresenca, token) {
 
     const url = urlBase();
-
     
     try {
-        const response = await fetch(`${url}attendances/all`, {
-            method: 'GET',
+        const response = await fetch(`${url}attendances/entry/mark`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`  
-            }
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(dataPresenca)
         });
 
         if (!response.ok) {
@@ -19,9 +20,11 @@ export async function getPresenca(token) {
         }
 
         const data = await response.json();
+        console.log(data);
 
         return data;
     } catch (error) {
         console.error('Erro:', error);
+        throw error;
     }
 }
