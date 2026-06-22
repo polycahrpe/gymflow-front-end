@@ -10,6 +10,7 @@ async function listCoaches(token) {
     try {
         const coaches = await getCoach(token);
 
+
         if (!coaches || coaches.length === 0) {
             listStudentCoachAdmin.innerHTML = "<li>Nenhum coach encontrado.</li>";
             return;
@@ -17,7 +18,9 @@ async function listCoaches(token) {
 
         listStudentCoachAdmin.innerHTML = "";
 
-        const listCoachesActive = coaches.filter(coach => coach.ativo === true);
+        let listCoachesActive = []
+
+        listCoachesActive = coaches.filter(coach => coach.ativo === true);
         console.log(listCoachesActive);
 
         if (listCoachesActive.length === 0) {

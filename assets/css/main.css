@@ -73,7 +73,6 @@ html {
 input, button, textarea, select {
     border: 0;
     outline: 0;
-    all: unset;
     cursor: pointer;
 }
 a {
@@ -129,7 +128,7 @@ img {
             }
 
             input{
-
+                background-color: transparent;
                 width: 100%;
                 padding: 1.2rem 0;
                 font-size: var(--small-font-size);

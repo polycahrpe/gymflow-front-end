@@ -54,13 +54,12 @@
 
                 </div>
 
-
                 <div class="card-select">
 
                     <div class="input-label">
-                        <label>Especialização</label>
+                        <label>Especialidade</label>
                         <select name="coach" id="especializacao-signIn" required>
-                            <option value="" selected>Selecione sua especialização</option>
+                            <option value="" selected>Selecione sua especialidade</option>
                             <option value="musculacao">musculacao</option>
                             <option value="crossfit">crossfit</option>
                             <option value="yoga">yoga</option>
@@ -85,6 +84,16 @@
                 <div class="card-select">
 
                     <div class="input-label">
+                        <label >Código de Acesso</label>
+                        <input 
+                            type="text"
+                            placeholder="3h21u8v"
+                            id="access-code-signIn"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-label">
                         <label >Senha</label>
                         <input 
                             type="password"
@@ -94,6 +103,82 @@
                         />
                     </div>
 
+                </div>
+
+                <div class="input-label-checkbox">
+                    <label>Selecione Experiências</label>
+
+                    <div>
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="musculacao" />
+                            <span>Musculação</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="crossfit" />
+                            <span>CrossFit</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="yoga" />
+                            <span>Yoga</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="pilates" />
+                            <span>Pilates</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="natacao" />
+                            <span>Natação</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="funcional" />
+                            <span>Funcional</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="boxe" />
+                            <span>Boxe</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="artes_marciais" />
+                            <span>Artes Marciais</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="spinning" />
+                            <span>Spinning</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="zumba" />
+                            <span>Zumba</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="calistenia" />
+                            <span>Calistenia</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="alongamento" />
+                            <span>Alongamento</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="atletismo" />
+                            <span>Atletismo</span>
+                        </div>
+
+                        <div class="checkbox-group anime-bottom">
+                            <input type="checkbox" class="experience-input" name="experience" value="nutrição_esportiva" />
+                            <span>Nutrição Esportiva</span>
+                        </div>
+                    </div>
                 </div>
 
                 <button class="button-dow" id="button-signIn">
