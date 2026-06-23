@@ -9,6 +9,10 @@
 
 }
 
+#btn-add-student {
+    display: none;
+}
+
 .section-alunos {
     flex: 1;
     width: 100%;
@@ -91,15 +95,21 @@
                 }
 
                 .estado {
-                    font-size: var(--smaller-font-size);
+                    display: flex;
+                    align-items: center;
+                    gap: .25rem;
                     padding: .2rem .7rem;
                     border-radius: 50px;
                     background-color: var(--first-color);
                     color: #fff;
-                    font-weight: var(--font-medium);
                     position: absolute;
                     right: 0;
                     top: 0;
+                    
+                    span {
+                        font-weight: var(--font-medium);
+                        font-size: var(--smaller-font-size);
+                    }
                 }
 
 
@@ -164,8 +174,7 @@
         .card-btns {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            padding-top: 1rem;
+            gap: 5rem;
     
             button, a {
                 font-size: var(--small-font-size);
@@ -190,14 +199,26 @@
             }
         
             .btn-cancelar-aluno {
-                color: var(--text-color);
-                background-color: transparent;
-    
-                &:hover {
-                    background-color: #ea1d2c;
-                    border-color: #ea1d2c;
-                    color: #fff;
+                all: unset;
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                display: grid;
+                place-content: center;
+                border: 1px solid var(--body-color-light);
+                transition: .6s all;
+                cursor: pointer;
+                background-color: var(--body-color-light);
+                box-shadow: var(--box-shadow);
+
+                i {
+                    font-size: 18px;
                 }
+
+                &:hover {
+                    transform: translateX(-10px);
+                }
+
             }
         
     

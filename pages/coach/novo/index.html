@@ -15,87 +15,40 @@
 </head>
 <body>
 
-     <header>
-        <nav class="container nav-header">
-            <div class="logo-and-icon">
-                <a href="../home/index.html">
-                    <img src="../../../assets/img/logo.png" alt="Logo GymFlow">
-                    <p>
-                        Gym<span>Flow</span> 
-                    </p>
-                </a>
-                <i class="bi bi-sliders"></i>
-            </div>
-            <div class="news-profile">
-                <a href="../news/index.html">
-                    <i class="bi bi-bell"></i>
-                </a>
-               <div class="profile">
-                <div class="circle-profile">
-                    <a href="#" id="circle-profile-header">
-                        ...
-                    </a>
-                </div>
-
-                <div class="name-level">
-                   <a href="../perfil/index.html" class="name" id="first-name">First Name</a>
-                   <small class="level" id="role">Admin</small>
-                </div>
-                
-               </div>
-            </div>
-        </nav>
-    </header>
-
     
-
     <main class="container main-coach">
 
 
         <section class="section-coach">
             
             <div class="card-title-description anime-bottom">
-                <strong>Cadastrar Novo Coach</strong>
-                <small>
-                    Preencha os campos abaixo para adicionar um novo coach ao sistema.
-                </small>
+                <strong>Gera um novo codigo de acesso!</strong>
+                
+            </div>
+
+            <div class="list-access-code anime-bottom">
+
+                <div class="card-btns anime-bottom">
+                    <a href="../index.html" class="btn-cancelar-aluno">
+                        <i class="bi bi-arrow-left"></i>
+                    </a>
+                    <button type="submit" class="btn-submit-aluno" id="btn-generate-access-code">Gerar novo codigo</button>
+                </div>
+
+                <ul id="ul-access-code">
+
+                    <!-- <li class="anime-bottom">
+                        <strong>{ 34567 }</strong>
+                        <span>Usado</span>
+                    </li> -->
+
+                </ul>
+
             </div>
 
             
 
-            <div class="form-coach anime-bottom">
-
-                <div class="card-inputs">
-
-                    <div class="input-label">
-                        <label for="#">Email</label>
-                        <input 
-                            type="email"
-                            placeholder="Ex: exemplo@gmail.com"
-                            required
-                            id="email-coach"
-                        />
-                    </div>
-    
-                    <div class="input-label">
-                        <label for="#">Especialização</label>
-                        <input 
-                            type="text"
-                            placeholder="Musculação, Crossfit, etc."
-                            required
-                            id="especializacao-coach"
-                        />
-                    </div>
-        
-                </div>
-
-
-                <div class="card-btns anime-bottom">
-                    <button type="submit" class="btn-submit-coach" id="btn-submit-coach">Registrar</button>
-                    <a href="../index.html" class="btn-cancelar-coach">Cancelar</a>
-                </div>
-
-            </div>
+            
 
 
         </section>

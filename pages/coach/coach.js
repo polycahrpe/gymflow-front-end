@@ -50,16 +50,14 @@ async function renderCardCoach(session) {
                     </small>
                 </div>
 
-                <a class="estado" href="./ficha/index.html">Ficha</a>
+                <a class="estado" href="./ficha/index.html">
+                    <i class="bi bi-eye"></i>
+                    <span>Ver a ficha do treinador</span>
+                </a>
             </div>
 
 
             <div class="card-btns">
-                <a href="./editar/index.html" class="btn-edit">
-                    <i class="bi bi-pencil"></i>
-                    <span>Editar</span>
-                </a>
-
                 <a href="#" class="btn-delete">
                     <i class="bi bi-trash"></i>
                     <span>Eliminar</span>
@@ -76,7 +74,6 @@ function renderAdmin(session) {
     renderCardCoach(session);
     
 }
-
 
 function error404() {
     window.location.href = "../404/index.html";

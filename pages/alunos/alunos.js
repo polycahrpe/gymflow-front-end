@@ -1,6 +1,7 @@
 import { getStudent } from "../../assets/js/api/students/get.js";
 import { deleteStudent } from "../../assets/js/api/students/delete.js";
 import { getSession } from "../../assets/js/main.js";
+import { getStudentByIdCoach } from "../../assets/js/api/students/getByIdCoach.js";
 
 const btnAddStudent = document.querySelector("#btn-add-student")
 const titlePage = document.querySelector("#title-page")
@@ -44,15 +45,28 @@ async function deletStudents(id, token) {
 
 }
 
-async function renderCardStudents(user, token) {
+async function renderCardStudents(session) {
+
+    const { user, access_token } = session
 
     const listCardStudents = document.querySelector("#list-card-students")
 
 
-    const response = await getStudent(token)
+    let response = null
 
+    
+    
+    if (user.role === "admin") {
+        response = await getStudent(access_token)
+    } 
 
-
+    if (user.role === "coach") {
+        
+        response = user.alunos
+        
+    }
+    console.log(response);
+    
     if (!response) {
         showErrorCard("Não foi possível carregar os alunos, tente novamente mais tarde.")
         return;
@@ -62,7 +76,6 @@ async function renderCardStudents(user, token) {
         showErrorCard("Não há alunos para mostrar, tente adicionar um novo aluno.")
         return;
     }
-
 
     response.forEach(student => {
     
@@ -86,7 +99,10 @@ async function renderCardStudents(user, token) {
                     </small>
                 </div>
         
-                <a class="estado" id="btn-view-profile" href="./ficha/index.html">Ver a Ficha</a>
+                <a class="estado" id="btn-view-profile" href="./ficha/index.html" style="display: ${user.role === "admin" ? "flex" : "none"}" >
+                    <i class="bi bi-eye"></i>
+                    <span>Ver a ficha do Aluno</span>
+                </a>
             </div>
         
             <div class="card-btns" style="display: ${user.role === "admin" ? "flex" : "none"}">
@@ -143,17 +159,18 @@ function renderAdmin(session) {
     titlePage.textContent = "Gestão de todos os alunos"
     subTitlePage.textContent = "Gerencie todos os alunos do ginásio!!!"
 
-    renderCardStudents(session.user, session.access_token)
+    btnAddStudent.style.display = "flex"
 
+    renderCardStudents(session)
 
 }
 
-function renderCoach(user) {
+function renderCoach(session) {
 
     titlePage.textContent = "Gestão dos meus Alunos!!!"
     subTitlePage.textContent = "Sendo coach aqui podes gerenciar todos os seu alunos!!!"
 
-    renderCardStudents(user.role)
+    renderCardStudents(session)
 
 }
 
@@ -182,7 +199,7 @@ function initAlunos() {
             renderAdmin(session);
             break;
         case "coach":
-            renderCoach(user);
+            renderCoach(session);
             break;
         default:
             error404();

@@ -47,7 +47,6 @@ async function changeStatusStudent(stundent) {
 
 }
 
-
 function showDataStudent(student) {
 
     console.log(student);
@@ -131,7 +130,6 @@ function showDataStudent(student) {
 
 }
 
-
 async function loadStudentProfile(id, token) {
 
     try {
@@ -151,9 +149,19 @@ async function loadStudentProfile(id, token) {
 
 }
 
+function error404() {
+    window.location.href = "../../404/index.html";
+}
+
 function initLoadStudentProfile() {
 
-    const session = getSession();    
+    const session = getSession();   
+    const { user } = session;
+    
+    if (user.role !== "admin") {
+        error404()
+        return;
+    }
 
     const studentId = localStorage.getItem("studentId");
 

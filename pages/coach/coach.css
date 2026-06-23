@@ -61,7 +61,7 @@
                         place-content: center;
 
                         span {
-                            font-size: var(--h1-font-size);
+                            font-size: var(--biggest-font-size);
                             font-weight: var(--font-medium);
                         }
                     }
@@ -86,15 +86,21 @@
                 }
 
                 .estado {
-                    font-size: var(--smaller-font-size);
+                    display: flex;
+                    align-items: center;
+                    gap: .25rem;
                     padding: .2rem .7rem;
                     border-radius: 50px;
                     background-color: var(--first-color);
                     color: #fff;
-                    font-weight: var(--font-medium);
                     position: absolute;
                     right: 0;
                     top: 0;
+                    
+                    span {
+                        font-weight: var(--font-medium);
+                        font-size: var(--smaller-font-size);
+                    }
                 }
 
 
@@ -106,11 +112,12 @@
                 justify-content: space-around;
 
                 a {
+                    width: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: .5rem;
-                    padding: .70rem 1.5rem;
+                    padding: .9rem 1.5rem;
                     background-color: var(--body-color-light);
                     transition: .2s;
                     border-radius: 50px;
@@ -120,15 +127,8 @@
                         font-weight: var(--font-medium);
                     }
 
-                    
-                    &:first-child {
 
-                        &:is(:hover, :focus) {
-                            background-color: var(--first-color);
-                        }
-                    }
-
-                    &:last-child {
+                    & {
                         
                         &:is(:hover, :focus) {
                             background-color: #ea1d2c;
@@ -152,54 +152,17 @@
 
     }
 
-    .form-coach {
-        padding-top: 2rem;
+    .list-access-code {
+        padding-top: 1rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 5rem;
 
-        .card-inputs {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-
-            .input-label {
-                width: min(360px, 100%);
-                display: flex;
-                flex-direction: column;
-                gap: .75rem;
-    
-                label {
-                    font-size: var(--normal-font-size);
-                    font-weight: var(--font-semibold);
-                    color: var(--text-color-light);
-                    padding-left: .75rem;
-                }
-    
-                input, select, textarea {
-                    width: 100%;
-                    padding: 1.2rem;
-                    font-size: var(--small-font-size);
-                    font-weight: var(--font-semibold);
-                    border-radius: 1rem;
-                    background-color: var(--body-color-light);
-                    border: 3px solid transparent;
-                    transition: .3s;
-    
-                    &:is(:focus, :hover) {
-                        border-color: var(--first-color);
-                    }
-                }
-    
-            }
-        }
 
         .card-btns {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            padding-top: 2rem;
+            gap: 5rem;
     
             button, a {
                 font-size: var(--small-font-size);
@@ -212,7 +175,7 @@
                 border: 3px solid var(--text-color);
             }
     
-            .btn-submit-coach {
+            .btn-submit-aluno {
                 color: #fff;
                 background-color: var(--text-color);
     
@@ -223,19 +186,69 @@
         
             }
         
-            .btn-cancelar-coach {
-                color: var(--text-color);
-                background-color: transparent;
-    
-                &:hover {
-                    background-color: #ea1d2c;
-                    border-color: #ea1d2c;
-                    color: #fff;
+            .btn-cancelar-aluno {
+                all: unset;
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                display: grid;
+                place-content: center;
+                border: 1px solid var(--body-color-light);
+                transition: .6s all;
+                cursor: pointer;
+                background-color: var(--body-color-light);
+                box-shadow: var(--box-shadow);
+
+                i {
+                    font-size: 18px;
                 }
+
+                &:hover {
+                    transform: translateX(-10px);
+                }
+
             }
         
     
         }
+
+        ul {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            padding-top: 2rem;
+
+            li {
+                width: 180px;
+                padding: 2rem .75rem;
+                border-radius: 1.5rem;
+                box-shadow: var(--box-shadow);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid transparent;
+                cursor: pointer;
+                transition: .3s all;
+
+                &:hover {
+                    background-color: var(--body-color-light);
+                }
+
+                strong {
+                    font-size: var(--h1-font-size);
+                }
+
+                span {
+                    color: var(--first-color);
+                }
+            }
+
+        }
+
     }
+
 
 }

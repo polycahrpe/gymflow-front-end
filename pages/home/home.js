@@ -1,29 +1,13 @@
 import { getSession } from "../../assets/js/main.js";
 import { admin } from "./admin.js";
 import { aluno } from "./aluno.js";
+import { coach } from "./coach.js";
 
 const strongWellcomeName = document.querySelector("#strong-wellcome-name");
 const spanWellcomeRoleState = document.querySelector("#span-wellcome-role-state");
 const pWellcomePainelState = document.querySelector("#p-wellcome-painel-state");
 
-//  function admin...
-function renderFrequencyWeek(frequencyWeek) {
-    const listDayweek = document.querySelector("#list-dias-semanal")
 
-    frequencyWeek.forEach(day => {
-        const li = document.createElement("li");
-        li.classList.add("anime-bottom");
-
-        li.innerHTML = `
-            <strong>${day.day}</strong>
-            <small>${day.presence}%</small>
-            <div class="bar" style="height: ${day.presence}%;"></div>
-        `
-
-        listDayweek.appendChild(li);
-    });
-
-}
 
 function renderAdmin(session) {
 
@@ -47,7 +31,9 @@ function renderAdmin(session) {
 
 
 //  function coach...
-function renderCoach(user) {
+function renderCoach(session) {
+
+    const { user } = session
 
     strongWellcomeName.textContent = strongWellcomeName ? `Olá ${user.nome}!!!` : "Houve um erro ao Carregar os dados...";
     spanWellcomeRoleState.textContent = spanWellcomeRoleState ? `${user.role} Activo` : "Houve um erro ao Carregar os dados...";
@@ -60,6 +46,7 @@ function renderCoach(user) {
     cardStactcsCoach.style.display = 'flex';
     cardStudentsCoach.style.display = 'flex';
     
+    coach(session)
 
 }
 
@@ -112,6 +99,7 @@ function initHome() {
     const session = getSession();
     const { user } = session;
 
+
     if (!user) {
         window.location.href = "../index.html";
         return;
@@ -124,7 +112,7 @@ function initHome() {
             renderAdmin(session);
             break;
         case "coach":
-            renderCoach(user);
+            renderCoach(session);
             break;
         case "student":
             renderStudent(session);
