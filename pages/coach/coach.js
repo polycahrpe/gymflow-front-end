@@ -50,7 +50,7 @@ async function renderCardCoach(session) {
                     </small>
                 </div>
 
-                <a class="estado" href="./ficha/index.html">
+                <a class="estado" href="#" id="btn-view-profile">
                     <i class="bi bi-eye"></i>
                     <span>Ver a ficha do treinador</span>
                 </a>
@@ -64,6 +64,15 @@ async function renderCardCoach(session) {
                 </a>
             </div>
         `
+
+        const btnViewProfile = cardCoach.querySelector("#btn-view-profile");
+        
+        btnViewProfile.addEventListener("click", (e) => {    
+            e.preventDefault();
+
+            localStorage.setItem("coachId", coach.id)
+            window.location.href = "./ficha/index.html"
+        })
 
         containerCardCoach.appendChild(cardCoach);
     });
