@@ -53,8 +53,6 @@ function renderListAluno(alunos) {
 
 
 export async function coach(session) {
-    console.log(session)
-
 
     renderCountAluno(session.user.alunos)
     renderListAluno(session.user.alunos)

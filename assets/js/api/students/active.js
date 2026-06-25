@@ -5,7 +5,7 @@ export async function active(id, token) {
     const url = urlBase();
     
     try {
-        const response = await fetch(`${url}students/activate/id/${id}`, {
+        const response = await fetch(`${url}students/activate/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

@@ -49,7 +49,7 @@ async function changeStatusStudent(stundent) {
 
 function showDataStudent(student) {
 
-    console.log(student);
+    const session = getSession()
 
     const initialsElement = document.querySelector("#initials");
     const nameParts = student.nome.split(" ");
@@ -64,6 +64,10 @@ function showDataStudent(student) {
 
     const btnAction = document.querySelector("#btn-action");
     const btnActionText = btnAction.querySelector("span");
+
+    if (session.user.role === "admin") {
+        btnAction.style.display = "flex"
+    }
 
     btnActionText.textContent = student.ativo
         ? "Desativar Aluno"
@@ -158,7 +162,7 @@ function initLoadStudentProfile() {
     const session = getSession();   
     const { user } = session;
     
-    if (user.role !== "admin") {
+    if (user.role !== "admin" && user.role !== "coach" ) {
         error404()
         return;
     }

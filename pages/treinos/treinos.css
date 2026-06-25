@@ -21,7 +21,154 @@
 
     .card-ficha-de-treino {
         background-color: var(--body-color-light);
-        padding: 1rem;
-        border-radius: .5rem;
+        padding: .45rem .45rem 2.2rem .45rem;
+        border-radius: 1.5rem;
+        width: 100%;
+
+        .content {
+            width: 100%;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .head   {
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+
+                .left {
+                    display: flex;
+                    gap: .75rem;
+
+                    .circle-img-aluno {
+                        border: 5px solid var(--body-color-light);
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        transform: translateY(-70px);
+
+                        > div {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            display: grid;
+                            place-items: center;
+                            background-color: #fff;
+
+                            span {
+                                font-size: var(--biggest-font-size);
+                                font-weight: var(--font-medium);
+                            }
+                        }
+                    }
+
+                    .name-email {
+                        display: flex;
+                        flex-direction: column;
+                        transform: translateY(-10px);
+
+                        span {
+                            font-size: var(--small-font-size);
+                            color: var(--text-color-light);
+                        }
+                    }
+                }
+
+                .right {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    a {
+                        background-color: var(--body-color-light);
+                        padding: .75rem 1.5rem;
+                        border-radius: 50px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.25rem;
+                        color: var(--text-color);
+
+                        span {
+                            font-size: var(--small-font-size);
+                            font-weight: var(--font-medium);
+                        }
+                    }
+                }
+            }
+
+            .list-exercicios {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                width: 100%;
+
+                li {
+                    width: 30% !important;
+                    display: flex;
+                    flex-direction: column;
+                    padding: .75rem 1rem;
+                    border-radius: .75rem;
+                    background-color: var(--body-color-light);
+                    border-left: 3px solid transparent;
+
+
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        gap: .75rem;
+
+                        p, small {
+                            font-size: var(--smaller-font-size);
+                        }
+
+                        p {
+                            font-weight: var(--font-semibold);
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        border-color: #FF8C42;
+                    }
+
+                    &:nth-child(2) {
+                        border-color: #2563EB;
+                    }
+
+                    &:nth-child(3) {
+                        border-color: #22C55E; 
+                    }
+
+                    &:nth-child(4) {
+                        border-color: #FACC15; 
+                    }
+
+                    &:nth-child(5) {
+                        border-color: #EF4444; 
+                    }
+
+                    &:nth-child(6) {
+                        border-color: #8B5CF6; 
+                    }
+
+                    &:nth-child(7) {
+                        border-color: #06B6D4; 
+                    }
+
+                    &:nth-child(8) {
+                        border-color: #EC4899; 
+                    }
+
+                    &:nth-child(9) {
+                        border-color: #4F46E5; 
+                    }
+                }
+            }
+
+        }
+        
     }
 }

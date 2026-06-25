@@ -65,7 +65,6 @@ async function renderCardStudents(session) {
         response = user.alunos
         
     }
-    console.log(response);
     
     if (!response) {
         showErrorCard("Não foi possível carregar os alunos, tente novamente mais tarde.")
@@ -99,7 +98,7 @@ async function renderCardStudents(session) {
                     </small>
                 </div>
         
-                <a class="estado" id="btn-view-profile" href="./ficha/index.html" style="display: ${user.role === "admin" ? "flex" : "none"}" >
+                <a class="estado" id="btn-view-profile" href="./ficha/index.html">
                     <i class="bi bi-eye"></i>
                     <span>Ver a ficha do Aluno</span>
                 </a>
